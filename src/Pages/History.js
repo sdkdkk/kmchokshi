@@ -15,7 +15,7 @@ const History = () => {
             <div className="col-lg-10">
               <img
                 className="w-100 inner-banner-img"
-                src="assets/images/about-banner.jpg"
+                src="images/about-banner.jpg"
                 alt=""
               />
             </div>
@@ -25,21 +25,21 @@ const History = () => {
       <section className="pt-5 pt-md-15 pb-md-15">
         <div className="container container-xxl">
           <div className="row align-items-center">
-            <div className="col-6 col-md-3" data-animate="fadeInLeft">
+            <div className="col-6 col-md-3" >
               <img
                 className="w-100"
-                src="assets/images/about/about01.jpg"
+                src="images/about/about01.jpg"
                 alt="about"
               />
             </div>
-            <div className="col-6 col-md-3" data-animate="fadeInLeft">
+            <div className="col-6 col-md-3" >
               <img
                 className="w-100"
-                src="assets/images/about/about02.jpg"
+                src="images/about/about02.jpg"
                 alt="about"
               />
             </div>
-            <div className="col-md-6 mb-6" data-animate="fadeInRight">
+            <div className="col-md-6 mb-6" >
               <div className="p-8 bg-color-1 mt-6 mt-lg-0">
                 <h2 className="fs-30 mb-5 lh-12">ABOUT US</h2>
                 <p className="font-weight-500">
@@ -62,14 +62,14 @@ const History = () => {
           <div className="row ">
             <div
               className="col-lg-6 text-center brand-bg"
-              data-animate="fadeInLeft">
+             >
               <img
                 className="w-100"
-                src="assets/images/about/ceo_kmchoksi01.jpg"
+                src="images/about/ceo_kmchoksi01.jpg"
                 alt=""
               />
             </div>
-            <div className="col-lg-6" data-animate="fadeInRight">
+            <div className="col-lg-6" >
               <div className="pl-lg-10 pr-lg-15 d-flex flex-column justify-content-center h-100">
                 <h2 className="fs-34 mb-2 mt-5">Ashvinkumar Kesharimal Shah</h2>
                 <p className="mb-7 font-weight-500">
@@ -91,14 +91,14 @@ const History = () => {
           <div className="row pt-lg-10 pt-5 flex-md-row-reverse">
             <div
               className="col-lg-6 text-center brand-bg"
-              data-animate="fadeInRight">
+              >
               <img
                 className="w-100"
-                src="assets/images/about/ceo_kmchoksi02.jpg"
+                src="images/about/ceo_kmchoksi02.jpg"
                 alt=""
               />
             </div>
-            <div className="col-lg-6" data-animate="fadeInLeft">
+            <div className="col-lg-6" >
               <div className="pl-lg-15 pr-lg-10 d-flex flex-column justify-content-center h-100 text-lg-right">
                 <h2 className="fs-34 mb-2 mt-5">Sheelaben Ashwinkumar Shah</h2>
                 <p className="mb-7 font-weight-500">

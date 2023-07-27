@@ -15,7 +15,7 @@ const Ourbrands = () => {
             <div className="col-lg-10">
               <img
                 className="w-100 inner-banner-img"
-                src="assets/images/brands/banner.jpg"
+                src="images/brands/banner.jpg"
                 alt=""
               />
             </div>
@@ -27,17 +27,17 @@ const Ourbrands = () => {
           <div className="row ">
             <div
               className="col-lg-6 text-center brand-bg mb-5"
-              data-animate="fadeInLeft">
+             >
               <img
                 className="w-100"
-                src="assets/images/brands/brand-img.jpg"
+                src="images/brands/brand-img.jpg"
                 alt="brand"
               />
             </div>
-            <div className="col-lg-6" data-animate="fadeInRight">
+            <div className="col-lg-6">
               <div className="pl-sm-10 pl-sm-0 d-flex flex-column justify-content-center align-i-center h-100">
                 <div className="brand-logo">
-                  <img src="assets/images/brands/brand-1.jpg" alt="" />
+                  <img src="images/brands/brand-1.jpg" alt="" />
                 </div>
                 <h2 className="fs-34 mb-0">KANYADAN</h2>
                 <h3 className="fs-24 mb-3">PURE WEDDING COLLECTION</h3>
@@ -58,17 +58,17 @@ const Ourbrands = () => {
           <div className="row pt-8 flex-md-row-reverse">
             <div
               className="col-lg-6 text-center brand-bg mb-5"
-              data-animate="fadeInRight">
+             >
               <img
                 className="w-100"
-                src="assets/images/brands/brand-img01.jpg"
+                src="images/brands/brand-img01.jpg"
                 alt="brand"
               />
             </div>
-            <div className="col-lg-6" data-animate="fadeInLeft">
+            <div className="col-lg-6" >
               <div className="pr-sm-10 d-flex flex-column justify-content-center align-i-center h-100 text-lg-right">
                 <div className="brand-logo">
-                  <img src="assets/images/brands/brand-1.jpg" alt=""/>
+                  <img src="images/brands/brand-1.jpg" alt="" />
                 </div>
                 <h2 className="fs-34 mb-0">KANYADAN</h2>
                 <h3 className="fs-24 mb-3">PURE WEDDING COLLECTION</h3>
@@ -89,17 +89,17 @@ const Ourbrands = () => {
           <div className="row pt-8">
             <div
               className="col-lg-6 text-center brand-bg mb-5"
-              data-animate="fadeInLeft">
+            >
               <img
                 className="w-100"
-                src="assets/images/brands/brand-img.jpg"
+                src="images/brands/brand-img.jpg"
                 alt="brand"
               />
             </div>
-            <div className="col-lg-6" data-animate="fadeInRight">
+            <div className="col-lg-6" >
               <div className="pl-sm-10 pl-sm-0 d-flex flex-column justify-content-center align-i-center h-100">
                 <div className="brand-logo">
-                  <img src="assets/images/brands/brand-1.jpg" alt="" />
+                  <img src="images/brands/brand-1.jpg" alt="" />
                 </div>
                 <h2 className="fs-34 mb-0">KANYADAN</h2>
                 <h3 className="fs-24 mb-3">PURE WEDDING COLLECTION</h3>

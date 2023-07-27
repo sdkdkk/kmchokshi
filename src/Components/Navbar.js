@@ -21,7 +21,7 @@ const Navbar = () => {
               <nav className="navbar navbar-expand-xl px-0 py-2 py-xl-0 row no-gutters">
                 <div className="col-xl-2">
                   <Link className="navbar-brand mr-0" to="/">
-                    <img src="assets/images/logo.svg" alt="K M Choksi" />
+                    <img src="images/logo.svg" alt="K M Choksi" />
                   </Link>
                 </div>
                 <div className="col-xl-6 d-flex justify-content-center position-static">
@@ -48,24 +48,24 @@ const Navbar = () => {
                       </Link>
                       <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
                         <li className="dropdown-item dropdown dropright">
-                          <Link className="dropdown-link" to="#">
+                          <Link className="dropdown-link" to="/ourbrands">
                             Kanyadan - Wedding Collection
                           </Link>
                         </li>
                         <li className="dropdown-item">
-                          <Link className="dropdown-link" to="faqs.html">
+                          <Link className="dropdown-link" to="/ourbrands">
                             Kanyadan - Wedding Collection
                           </Link>
                         </li>
                         <li className="dropdown-item">
-                          <Link className="dropdown-link" to="service.html">
+                          <Link className="dropdown-link" to="/ourbrands">
                             Kanyadan - Wedding Collection
                           </Link>
                         </li>
                         <li className="dropdown-item">
                           <Link
                             className="dropdown-link"
-                            to="login-register.html">
+                            to="/ourbrands">
                             Kanyadan - Wedding Collection
                           </Link>
                         </li>
@@ -170,7 +170,7 @@ const Navbar = () => {
                             <div className="col-6 h-100">
                               <div className="card border-0 mt-2">
                                 <img
-                                  src="assets/images/menu.jpg"
+                                  src="images/menu.jpg"
                                   alt=""
                                   className="card-img"
                                 />
@@ -261,7 +261,7 @@ const Navbar = () => {
                 <Link
                   className="navbar-brand d-inline-block mx-auto"
                   to="index.html">
-                  <img src="assets/images/logo.png" alt="Furnitor" />
+                  <img src="images/logo.png" alt="Furnitor" />
                 </Link>
                 <Link
                   to="#search-popup"
@@ -281,7 +281,7 @@ const Navbar = () => {
         <div className="pt-5 pb-7 card border-0 h-100">
           <div className="d-flex align-items-center card-header border-0 py-0 pl-8 pr-7 mb-9 bg-transparent">
             <Link href="index-2.html" className="d-block w-52px">
-              <img src="assets/images/short_logo.png" alt="Furnitor" />
+              <img src="images/short_logo.png" alt="Furnitor" />
             </Link>
             <span className="canvas-close d-inline-block text-right fs-24 ml-auto lh-1 text-primary">
               <i className="fal fa-times" />
