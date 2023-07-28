@@ -1,4 +1,5 @@
 import React from "react";
+import { Animated } from "react-animated-css";
 
 const History = () => {
   return (
@@ -25,21 +26,33 @@ const History = () => {
       <section className="pt-5 pt-md-15 pb-md-15">
         <div className="container container-xxl">
           <div className="row align-items-center">
-            <div className="col-6 col-md-3" >
+            <Animated
+              animationOut="fadeInLeft"
+              animationIn="fadeInLeft"
+              isVisible={true}
+              className="col-6 col-md-3">
               <img
                 className="w-100"
                 src="images/about/about01.jpg"
                 alt="about"
               />
-            </div>
-            <div className="col-6 col-md-3" >
+            </Animated>
+            <Animated
+              animationOut="fadeInLeft"
+              animationIn="fadeInLeft"
+              isVisible={true}
+              className="col-6 col-md-3">
               <img
                 className="w-100"
                 src="images/about/about02.jpg"
                 alt="about"
               />
-            </div>
-            <div className="col-md-6 mb-6" >
+            </Animated>
+            <Animated
+              animationOut="fadeInRight"
+              animationIn="fadeInRight"
+              isVisible={true}
+              className="col-md-6 mb-6">
               <div className="p-8 bg-color-1 mt-6 mt-lg-0">
                 <h2 className="fs-30 mb-5 lh-12">ABOUT US</h2>
                 <p className="font-weight-500">
@@ -53,23 +66,29 @@ const History = () => {
                   and ambition to power ahead.
                 </p>
               </div>
-            </div>
+            </Animated>
           </div>
         </div>
       </section>
       <section className="pt-8 pb-12">
         <div className="container-fluid">
           <div className="row ">
-            <div
-              className="col-lg-6 text-center brand-bg"
-             >
+            <Animated
+              animationOut="fadeInLeft"
+              animationIn="fadeInLeft"
+              isVisible={true}
+              className="col-lg-6 text-center brand-bg">
               <img
                 className="w-100"
                 src="images/about/ceo_kmchoksi01.jpg"
                 alt=""
               />
-            </div>
-            <div className="col-lg-6" >
+            </Animated>
+            <Animated
+              animationOut="fadeInRight"
+              animationIn="fadeInRight"
+              isVisible={true}
+              className="col-lg-6">
               <div className="pl-lg-10 pr-lg-15 d-flex flex-column justify-content-center h-100">
                 <h2 className="fs-34 mb-2 mt-5">Ashvinkumar Kesharimal Shah</h2>
                 <p className="mb-7 font-weight-500">
@@ -86,19 +105,25 @@ const History = () => {
                 </p>
                 <div></div>
               </div>
-            </div>
+            </Animated>
           </div>
           <div className="row pt-lg-10 pt-5 flex-md-row-reverse">
-            <div
-              className="col-lg-6 text-center brand-bg"
-              >
+            <Animated
+              animationOut="fadeInRight"
+              animationIn="fadeInRight"
+              isVisible={true}
+              className="col-lg-6 text-center brand-bg">
               <img
                 className="w-100"
                 src="images/about/ceo_kmchoksi02.jpg"
                 alt=""
               />
-            </div>
-            <div className="col-lg-6" >
+            </Animated>
+            <Animated
+              animationOut="fadeInLeft"
+              animationIn="fadeInLeft"
+              isVisible={true}
+              className="col-lg-6">
               <div className="pl-lg-15 pr-lg-10 d-flex flex-column justify-content-center h-100 text-lg-right">
                 <h2 className="fs-34 mb-2 mt-5">Sheelaben Ashwinkumar Shah</h2>
                 <p className="mb-7 font-weight-500">
@@ -115,7 +140,7 @@ const History = () => {
                 </p>
                 <div></div>
               </div>
-            </div>
+            </Animated>
           </div>
         </div>
       </section>

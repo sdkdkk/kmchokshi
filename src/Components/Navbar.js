@@ -26,19 +26,13 @@ const Navbar = () => {
                 </div>
                 <div className="col-xl-6 d-flex justify-content-center position-static">
                   <ul className="navbar-nav hover-menu main-menu px-0 mx-xl-n4">
-                    <li
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      className="nav-item dropdown-item-home dropdown py-2 py-xl-5 px-0 px-xl-4">
+                    <li className="nav-item dropdown-item-home dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link className="nav-link p-0" to="/history">
                         History
                         <span className="caret" />
                       </Link>
                     </li>
-                    <li
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      className="nav-item dropdown-item-pages dropdown py-2 py-xl-5 px-0 px-xl-4">
+                    <li className="nav-item dropdown-item-pages dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link
                         className="nav-link dropdown-toggle p-0"
                         to="/ourbrands"
@@ -63,21 +57,16 @@ const Navbar = () => {
                           </Link>
                         </li>
                         <li className="dropdown-item">
-                          <Link
-                            className="dropdown-link"
-                            to="/ourbrands">
+                          <Link className="dropdown-link" to="/ourbrands">
                             Kanyadan - Wedding Collection
                           </Link>
                         </li>
                       </ul>
                     </li>
-                    <li
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      className="nav-item dropdown-item-shop dropdown py-2 py-xl-5 px-0 px-xl-4">
+                    <li className="nav-item dropdown-item-shop dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link
                         className="nav-link dropdown-toggle p-0"
-                        to="store.html"
+                        to="/ourproducts"
                         data-toggle="dropdown">
                         Our Products
                         <span className="caret" />
@@ -87,22 +76,24 @@ const Navbar = () => {
                           <div className="row no-gutters w-100">
                             <div className="col-2">
                               <div className="dropdown-item">
-                                <Link className="dropdown-link" to="#">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
                                   Earring
                                 </Link>
                               </div>
                               <div className="dropdown-item">
-                                <Link className="dropdown-link" to="#">
+                                <Link className="dropdown-link" to="/ourproducts">
                                   Ring
                                 </Link>
                               </div>
                               <div className="dropdown-item">
-                                <Link className="dropdown-link" to="#">
+                                <Link className="dropdown-link" to="/ourproducts">
                                   Mangalsutra
                                 </Link>
                               </div>
                               <div className="dropdown-item">
-                                <Link className="dropdown-link" to="#">
+                                <Link className="dropdown-link" to="/ourproducts">
                                   Braceletes
                                 </Link>
                               </div>
@@ -111,28 +102,28 @@ const Navbar = () => {
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
-                                  to="product-page-01.html">
+                                  to="/ourproducts">
                                   Kadas
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
-                                  to="product-page-02.html">
+                                  to="/ourproducts">
                                   Bangles
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
-                                  to="product-page-03.html">
+                                  to="/ourproducts">
                                   Chain
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
-                                  to="product-page-04.html">
+                                  to="/ourproducts">
                                   Pendant
                                 </Link>
                               </div>
@@ -141,28 +132,28 @@ const Navbar = () => {
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
-                                  to="product-page-03.html">
+                                  to="/ourproducts">
                                   Diamond
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
-                                  to="product-page-05.html">
+                                  to="/ourproducts">
                                   Pendant Set
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
-                                  to="product-page-07.html">
+                                  to="/ourproducts">
                                   Necklace
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
-                                  to="product-page-06.html">
+                                  to="/ourproducts">
                                   Antique Jewellery
                                 </Link>
                               </div>
@@ -180,35 +171,29 @@ const Navbar = () => {
                         </div>
                       </div>
                     </li>
-                    <li
-                      className="nav-item dropdown-item-contact dropdown py-2 py-xl-5 px-0 px-xl-4"
-                      aria-haspopup="true"
-                      aria-expanded="false">
+                    <li className="nav-item dropdown-item-contact dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link
                         className="nav-link dropdown-toggle p-0"
-                        to="#"
+                        to="/diamond"
                         data-toggle="dropdown">
                         Diamond
                         <span className="caret" />
                       </Link>
                       <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
                         <li className="dropdown-item">
-                          <Link className="dropdown-link" to="#">
+                          <Link className="dropdown-link" to="/diamond">
                             Diamond
                           </Link>
                         </li>
                         <li className="dropdown-item">
-                          <Link className="dropdown-link" to="#">
+                          <Link className="dropdown-link" to="/diamond">
                             Diamond
                           </Link>
                         </li>
                       </ul>
                     </li>
-                    <li
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
-                      <Link className="nav-link p-0" to="#">
+                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
+                      <Link className="nav-link p-0" to="/storelocator">
                         Store Locator
                         <span className="caret" />
                       </Link>
@@ -235,12 +220,14 @@ const Navbar = () => {
                     </form>
                     <ul className="navbar-nav flex-row justify-content-xl-end d-flex flex-wrap text-body py-0 navbar-right">
                       <li className="nav-item">
-                        <Link className="nav-link pr-3 py-0" to="#">
+                        <Link
+                          className="nav-link pr-3 py-0"
+                          to="/bookappointment">
                           <i className="fab fa-whatsapp" />
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link className="bookappointment" to="#">
+                        <Link className="bookappointment" to="/bookappointment">
                           Book Appointment
                         </Link>
                       </li>
@@ -289,19 +276,13 @@ const Navbar = () => {
           </div>
           <div className="overflow-y-auto pb-6 pl-8 pr-7 card-body pt-0">
             <ul className="navbar-nav main-menu px-0 ">
-              <li
-                aria-haspopup="true"
-                aria-expanded="false"
-                className="nav-item py-1 px-0">
+              <li className="nav-item py-1 px-0">
                 <Link className="nav-link p-0" href="#">
                   History
                   <span className="caret" />
                 </Link>
               </li>
-              <li
-                aria-haspopup="true"
-                aria-expanded="false"
-                className="nav-item dropdown py-1 px-0">
+              <li className="nav-item dropdown py-1 px-0">
                 <Link
                   className="nav-link dropdown-toggle p-0"
                   href="#"
@@ -331,10 +312,7 @@ const Navbar = () => {
                   </div>
                 </div>
               </li>
-              <li
-                aria-haspopup="true"
-                aria-expanded="false"
-                className="nav-item dropdown py-1 px-0">
+              <li className="nav-item dropdown py-1 px-0">
                 <Link
                   className="nav-link dropdown-toggle p-0"
                   href="#"
@@ -375,10 +353,7 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
-              <li
-                aria-haspopup="true"
-                aria-expanded="false"
-                className="nav-item dropdown py-1 px-0">
+              <li className="nav-item dropdown py-1 px-0">
                 <Link
                   className="nav-link dropdown-toggle p-0"
                   href="#"
@@ -399,18 +374,12 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
-              <li
-                aria-haspopup="true"
-                aria-expanded="false"
-                className="nav-item py-1 px-0">
+              <li className="nav-item py-1 px-0">
                 <Link className="nav-link  p-0" href="#">
                   Store Locator
                 </Link>
               </li>
-              <li
-                aria-haspopup="true"
-                aria-expanded="false"
-                className="nav-item py-1 px-0">
+              <li className="nav-item py-1 px-0">
                 <Link className="nav-link  p-0" href="#">
                   Book Appointment
                 </Link>
@@ -446,12 +415,12 @@ const Navbar = () => {
       </div>
       <>
         <div className="position-fixed pos-fixed-bottom-right p-6 z-index-10">
-          <a
+          <Link
             href="#"
             className="gtf-back-to-top bg-white text-primary hover-white bg-hover-primary shadow p-0 w-52px h-52 rounded-circle fs-20 d-flex align-items-center justify-content-center"
             title="Back To Top">
             <i className="fal fa-arrow-up" />
-          </a>
+          </Link>
         </div>
         {isSearchPopupOpen && (
           <div

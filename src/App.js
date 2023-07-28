@@ -4,6 +4,10 @@ import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
 import History from "./Pages/History";
 import Ourbrands from "./Pages/Ourbrands";
+import Ourproducts from "./Pages/Ourproducts";
+import Diamond from "./Pages/Diamond";
+import Storelocator from "./Pages/Storelocator";
+import Bookappointment from "./Pages/Bookappointment";
 
 function App() {
   return (
@@ -14,6 +18,10 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/history" element={<History />} />
           <Route exact path="/ourbrands" element={<Ourbrands />} />
+          <Route exact path="/ourproducts" element={<Ourproducts />} />
+          <Route exact path="/diamond" element={<Diamond />} />
+          <Route exact path="/storelocator" element={<Storelocator />} />
+          <Route exact path="/bookappointment" element={<Bookappointment />} />
         </Routes>
         <Footer />
       </Router>

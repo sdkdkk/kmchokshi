@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Animated } from "react-animated-css";
 
 const Ourbrands = () => {
   return (
@@ -25,16 +27,22 @@ const Ourbrands = () => {
       <section className="pt-10 pb-12">
         <div className="container-fluid">
           <div className="row ">
-            <div
-              className="col-lg-6 text-center brand-bg mb-5"
-             >
+            <Animated
+              animationOut="fadeInLeft"
+              animationIn="fadeInLeft"
+              isVisible={true}
+              className="col-lg-6 text-center brand-bg mb-5">
               <img
                 className="w-100"
                 src="images/brands/brand-img.jpg"
                 alt="brand"
               />
-            </div>
-            <div className="col-lg-6">
+            </Animated>
+            <Animated
+              animationOut="fadeInRight"
+              animationIn="fadeInRight"
+              isVisible={true}
+              className="col-lg-6">
               <div className="pl-sm-10 pl-sm-0 d-flex flex-column justify-content-center align-i-center h-100">
                 <div className="brand-logo">
                   <img src="images/brands/brand-1.jpg" alt="" />
@@ -46,26 +54,32 @@ const Ourbrands = () => {
                   day
                 </p>
                 <div>
-                  <a
+                  <Link
                     href="#"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
-                  </a>
+                  </Link>
                 </div>
               </div>
-            </div>
+            </Animated>
           </div>
           <div className="row pt-8 flex-md-row-reverse">
-            <div
-              className="col-lg-6 text-center brand-bg mb-5"
-             >
+            <Animated
+              animationOut="fadeInRight"
+              animationIn="fadeInRight"
+              isVisible={true}
+              className="col-lg-6 text-center brand-bg mb-5">
               <img
                 className="w-100"
                 src="images/brands/brand-img01.jpg"
                 alt="brand"
               />
-            </div>
-            <div className="col-lg-6" >
+            </Animated>
+            <Animated
+              animationOut="fadeInLeft"
+              animationIn="fadeInLeft"
+              isVisible={true}
+              className="col-lg-6">
               <div className="pr-sm-10 d-flex flex-column justify-content-center align-i-center h-100 text-lg-right">
                 <div className="brand-logo">
                   <img src="images/brands/brand-1.jpg" alt="" />
@@ -77,26 +91,32 @@ const Ourbrands = () => {
                   day
                 </p>
                 <div>
-                  <a
+                  <Link
                     href="shop-page-06.html"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
-                  </a>
+                  </Link>
                 </div>
               </div>
-            </div>
+            </Animated>
           </div>
           <div className="row pt-8">
-            <div
-              className="col-lg-6 text-center brand-bg mb-5"
-            >
+            <Animated
+              animationOut="fadeInLeft"
+              animationIn="fadeInLeft"
+              isVisible={true}
+              className="col-lg-6 text-center brand-bg mb-5">
               <img
                 className="w-100"
                 src="images/brands/brand-img.jpg"
                 alt="brand"
               />
-            </div>
-            <div className="col-lg-6" >
+            </Animated>
+            <Animated
+              animationOut="fadeInRight"
+              animationIn="fadeInRight"
+              isVisible={true}
+              className="col-lg-6">
               <div className="pl-sm-10 pl-sm-0 d-flex flex-column justify-content-center align-i-center h-100">
                 <div className="brand-logo">
                   <img src="images/brands/brand-1.jpg" alt="" />
@@ -108,14 +128,14 @@ const Ourbrands = () => {
                   day
                 </p>
                 <div>
-                  <a
+                  <Link
                     href="#"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
-                  </a>
+                  </Link>
                 </div>
               </div>
-            </div>
+            </Animated>
           </div>
         </div>
       </section>
