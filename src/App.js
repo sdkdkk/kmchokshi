@@ -8,6 +8,7 @@ import Ourproducts from "./Pages/Ourproducts";
 import Diamond from "./Pages/Diamond";
 import Storelocator from "./Pages/Storelocator";
 import Bookappointment from "./Pages/Bookappointment";
+import Productdetails from "./Pages/Productdetails";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/diamond" element={<Diamond />} />
           <Route exact path="/storelocator" element={<Storelocator />} />
           <Route exact path="/bookappointment" element={<Bookappointment />} />
+          <Route exact path="/productdetails" element={<Productdetails />} />
         </Routes>
         <Footer />
       </Router>

@@ -38,11 +38,11 @@ const Storelocator = () => {
                 <p className=" mb-0">Contact : 09726014777</p>
                 <p className=" mb-0">
                   Email :
-                  <Link href="mailto:info@kmchoksi@gmail.com">
+                  <Link to="mailto:info@kmchoksi@gmail.com">
                     info@kmchoksi@gmail.com
                   </Link>
                 </p>
-                <Link className="google-map" href="#">
+                <Link className="google-map" to="#">
                   view on google map
                 </Link>
               </div>
@@ -63,11 +63,11 @@ const Storelocator = () => {
                 <p className=" mb-0">Contact : 09726014777</p>
                 <p className=" mb-0">
                   Email :
-                  <Link href="mailto:info@kmchoksi@gmail.com">
+                  <Link to="mailto:info@kmchoksi@gmail.com">
                     info@kmchoksi@gmail.com
                   </Link>
                 </p>
-                <Link className="google-map" href="#">
+                <Link className="google-map" to="#">
                   view on google map
                 </Link>
               </div>

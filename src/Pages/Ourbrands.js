@@ -55,7 +55,7 @@ const Ourbrands = () => {
                 </p>
                 <div>
                   <Link
-                    href="#"
+                    to="#"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>
@@ -92,7 +92,7 @@ const Ourbrands = () => {
                 </p>
                 <div>
                   <Link
-                    href="shop-page-06.html"
+                    to="shop-page-06.html"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>
@@ -129,7 +129,7 @@ const Ourbrands = () => {
                 </p>
                 <div>
                   <Link
-                    href="#"
+                    to="#"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>

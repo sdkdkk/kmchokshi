@@ -40,7 +40,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img src="images/collection/01.jpg" alt="collection 01" />
                   <h4>Gold Coins</h4>
                 </Link>
@@ -51,7 +51,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/02.jpg"
                     alt="collection Logo 02"
@@ -65,7 +65,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/03.jpg"
                     alt="collection Logo 03"
@@ -79,7 +79,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/04.jpg"
                     alt="collection Logo 04"
@@ -93,7 +93,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/05.jpg"
                     alt="collection Logo 05"
@@ -107,7 +107,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/06.jpg"
                     alt="collection Logo 06"
@@ -121,7 +121,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/07.jpg"
                     alt="collection Logo 07"
@@ -135,7 +135,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/08.jpg"
                     alt="collection Logo 08"
@@ -149,7 +149,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/09.jpg"
                     alt="collection Logo 09"
@@ -163,7 +163,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/10.jpg"
                     alt="collection Logo 10"
@@ -177,7 +177,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/11.jpg"
                     alt="collection Logo 11"
@@ -191,7 +191,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link href="#" className="d-block item">
+                <Link to="/productdetails" className="d-block item">
                   <img
                     src="images/collection/12.jpg"
                     alt="collection Logo 12"
@@ -231,14 +231,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -270,14 +270,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -309,14 +309,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -348,14 +348,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -387,14 +387,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -426,14 +426,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -465,14 +465,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -504,14 +504,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -543,14 +543,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -581,14 +581,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -620,14 +620,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -659,14 +659,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -699,14 +699,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -738,14 +738,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -777,14 +777,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -816,14 +816,14 @@ const Ourproducts = () => {
                     className="card-img ratio bg-img-cover-center ratio-1-1"></div>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Whatsapp"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
                       <i className="fab fa-whatsapp" />
                     </Link>
                     <Link
-                      href="#"
+                      to="#"
                       data-toggle="tooltip"
                       title="Enquire Now"
                       className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
@@ -844,45 +844,6 @@ const Ourproducts = () => {
               </div>
             </Animated>
           </div>
-          <nav className="pb-11 pb-lg-14 overflow-hidden">
-            <ul className="pagination justify-content-center align-items-center mb-0">
-              <li className="page-item fs-12 d-none d-sm-block">
-                <Link className="page-link" href="#" tabIndex={-1}>
-                  <i className="far fa-angle-double-left" />
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" href="#">
-                  1
-                </Link>
-              </li>
-              <li className="page-item active" aria-current="page">
-                <Link className="page-link" href="#">
-                  2
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" href="#">
-                  3
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" href="#">
-                  ...
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" href="#">
-                  6
-                </Link>
-              </li>
-              <li className="page-item fs-12 d-none d-sm-block">
-                <Link className="page-link" href="#">
-                  <i className="far fa-angle-double-right" />
-                </Link>
-              </li>
-            </ul>
-          </nav>
           <div className="canvas-sidebar filter-canvas">
             <div className="canvas-overlay"></div>
             <form className="h-100">
@@ -905,56 +866,56 @@ const Ourproducts = () => {
                       <ul className="list-unstyled mb-0">
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Earring
                           </Link>
                         </li>
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Ring
                           </Link>
                         </li>
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Mangalsutra
                           </Link>
                         </li>
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Braceletes
                           </Link>
                         </li>
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Kadas
                           </Link>
                         </li>
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Chain
                           </Link>
                         </li>
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Pendant
                           </Link>
                         </li>
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Diamond
                           </Link>
@@ -970,14 +931,14 @@ const Ourproducts = () => {
                       <ul className="list-unstyled mb-0">
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Men
                           </Link>
                         </li>
                         <li className="mb-1">
                           <Link
-                            href="#"
+                            to="#"
                             className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                             Women
                           </Link>
@@ -993,63 +954,63 @@ const Ourproducts = () => {
                       <ul className="list-inline mb-0">
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#d0a272" }}
                           />
                         </li>
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#68412d" }}
                           />
                         </li>
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#000000" }}
                           />
                         </li>
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#aa5959" }}
                           />
                         </li>
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#8db4d2" }}
                           />
                         </li>
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#c2c3a0" }}
                           />
                         </li>
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#c7857d" }}
                           />
                         </li>
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#e3e1e7" }}
                           />
                         </li>
                         <li className="list-inline-item">
                           <Link
-                            href="#"
+                            to="#"
                             className="d-block item"
                             style={{ backgroundColor: "#b490b0" }}
                           />
@@ -1062,14 +1023,14 @@ const Ourproducts = () => {
                   <div className="row no-gutter mx-n2">
                     <div className="col-sm-6 px-2 mb-2 mb-sm-0">
                       <Link
-                        href="#"
+                        to="#"
                         className="btn btn-primary btn-block letter-spacing-05 text-uppercase">
                         apply
                       </Link>
                     </div>
                     <div className="col-sm-6 px-2">
                       <Link
-                        href="#"
+                        to="#"
                         className="btn btn-outline-primary btn-block letter-spacing-05 text-uppercase">
                         clear
                       </Link>

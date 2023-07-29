@@ -57,7 +57,7 @@ const Home = () => {
               animationOut="fadeInLeft"
               animationIn="fadeInLeft"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/01.jpg" alt="collection 01" />
               <h4>Gold Coins</h4>
@@ -67,7 +67,7 @@ const Home = () => {
               animationOut="fadeInLeft"
               animationIn="fadeInLeft"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/02.jpg" alt="collection Logo 02" />
               <h4>Earrings</h4>
@@ -76,7 +76,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/03.jpg" alt="collection Logo 03" />
               <h4>Pendants</h4>
@@ -85,7 +85,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/04.jpg" alt="collection Logo 04" />
               <h4>Finger Rings</h4>
@@ -94,7 +94,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/05.jpg" alt="collection Logo 05" />
               <h4>Mangalsutras</h4>
@@ -103,7 +103,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/06.jpg" alt="collection Logo 06" />
               <h4>Neckwear</h4>
@@ -112,7 +112,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/07.jpg" alt="collection Logo 07" />
               <h4>Wedding Rings</h4>
@@ -121,7 +121,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/08.jpg" alt="collection Logo 08" />
               <h4>Chains</h4>
@@ -130,7 +130,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/09.jpg" alt="collection Logo 09" />
               <h4>Bangles</h4>
@@ -139,7 +139,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/10.jpg" alt="collection Logo 10" />
               <h4>Bracelets</h4>
@@ -148,7 +148,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/11.jpg" alt="collection Logo 11" />
               <h4>Nose Pins</h4>
@@ -157,7 +157,7 @@ const Home = () => {
               animationOut="fadeIn"
               animationIn="fadeIn"
               isVisible={true}
-              href="#"
+              to="#"
               className="d-block item ">
               <img src="images/collection/12.jpg" alt="collection Logo 12" />
               <h4>Pendant Sets</h4>
@@ -173,7 +173,7 @@ const Home = () => {
           <div className="row">
             <div className="col-lg-4 mb-5">
               <Link
-                href="#"
+                to="#"
                 className="card border-0 hover-shine hover-change-content">
                 <img
                   src="images/collection/banner01.jpg"
@@ -184,7 +184,7 @@ const Home = () => {
             </div>
             <div className="col-lg-4 mb-5">
               <Link
-                href="#"
+                to="#"
                 className="card border-0 hover-shine hover-change-content">
                 <img
                   src="images/collection/banner02.jpg"
@@ -195,7 +195,7 @@ const Home = () => {
             </div>
             <div className="col-lg-4 mb-5">
               <Link
-                href="#"
+                to="#"
                 className="card border-0 hover-shine hover-change-content">
                 <img
                   src="images/collection/banner03.jpg"
@@ -208,7 +208,7 @@ const Home = () => {
           <div className="row">
             <div className="col-lg-3 mb-5">
               <Link
-                href="#"
+                to="#"
                 className="card border-0 hover-shine hover-change-content">
                 <img
                   src="images/collection/banner04.jpg"
@@ -219,7 +219,7 @@ const Home = () => {
             </div>
             <div className="col-lg-6 mb-5">
               <Link
-                href="#"
+                to="#"
                 className="card border-0 hover-shine hover-change-content">
                 <img
                   src="images/collection/banner05.jpg"
@@ -230,7 +230,7 @@ const Home = () => {
             </div>
             <div className="col-lg-3 mb-5">
               <Link
-                href="#"
+                to="#"
                 className="card border-0 hover-shine hover-change-content">
                 <img
                   src="images/collection/banner06.jpg"
@@ -264,7 +264,7 @@ const Home = () => {
                   and ambition to power ahead.
                 </p>
                 <Link
-                  href="shop-page-04.html"
+                  to="shop-page-04.html"
                   className="btn btn-outline-primary text-uppercase letter-spacing-05">
                   About Us
                 </Link>
@@ -290,32 +290,32 @@ const Home = () => {
         <div className="container">
           <Slider {...settings1}>
             <div className="box">
-              <Link href="#" className="d-block">
+              <Link to="#" className="d-block">
                 <img src="images/brands/brand-1.jpg" alt="brand Logo 01" />
               </Link>
             </div>
             <div className="box">
-              <Link href="#" className="d-block">
+              <Link to="#" className="d-block">
                 <img src="images/brands/brand-2.jpg" alt="brand Logo 02" />
               </Link>
             </div>
             <div className="box">
-              <Link href="#" className="d-block">
+              <Link to="#" className="d-block">
                 <img src="images/brands/brand-1.jpg" alt="Client Logo 03" />
               </Link>
             </div>
             <div className="box">
-              <Link href="#" className="d-block">
+              <Link to="#" className="d-block">
                 <img src="images/brands/brand-2.jpg" alt="Client Logo 04" />
               </Link>
             </div>
             <div className="box">
-              <Link href="#" className="d-block">
+              <Link to="#" className="d-block">
                 <img src="images/brands/brand-1.jpg" alt="Client Logo 05" />
               </Link>
             </div>
             <div className="box">
-              <Link href="#" className="d-block">
+              <Link to="#" className="d-block">
                 <img src="images/brands/brand-2.jpg" alt="Client Logo 06" />
               </Link>
             </div>
@@ -345,7 +345,7 @@ const Home = () => {
                 </p>
                 <div>
                   <Link
-                    href="#"
+                    to="#"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>
@@ -377,7 +377,7 @@ const Home = () => {
                 </p>
                 <div>
                   <Link
-                    href="shop-page-06.html"
+                    to="shop-page-06.html"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>
