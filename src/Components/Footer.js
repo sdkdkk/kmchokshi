@@ -16,28 +16,28 @@ const Footer = () => {
                   href="#"
                   className="text-gray hover-white font-weight-500">
                   Our Story
-                </Link>{" "}
+                </Link>
               </li>
               <li className="py-1">
                 <Link
                   href="#"
                   className="text-gray hover-white font-weight-500">
                   Our History
-                </Link>{" "}
+                </Link>
               </li>
               <li className="py-1">
                 <Link
                   href="#"
                   className="text-gray hover-white font-weight-500">
                   Contact Us
-                </Link>{" "}
+                </Link>
               </li>
               <li className="py-1">
                 <Link
                   href="#"
                   className="text-gray hover-white font-weight-500">
                   Privacy Policy
-                </Link>{" "}
+                </Link>
               </li>
             </ul>
           </div>
@@ -52,22 +52,22 @@ const Footer = () => {
               <li>
                 <Link href="#">
                   <i className="fab fa-facebook" />
-                </Link>{" "}
+                </Link>
               </li>
               <li>
                 <Link href="#">
                   <i className="fab fa-twitter" />
-                </Link>{" "}
+                </Link>
               </li>
               <li>
                 <Link href="#">
                   <i className="fab fa-instagram" />
-                </Link>{" "}
+                </Link>
               </li>
               <li>
                 <Link href="#">
                   <i className="fab fa-youtube" />
-                </Link>{" "}
+                </Link>
               </li>
             </ul>
           </div>
@@ -80,30 +80,30 @@ const Footer = () => {
                 <Link
                   href="#"
                   className="text-gray hover-white font-weight-500">
-                  <i className="fab fa-whatsapp mr-1" /> +91 9510970230{" "}
-                </Link>{" "}
+                  <i className="fab fa-whatsapp mr-1" /> +91 9510970230
+                </Link>
               </li>
               <li className="py-1">
                 <Link
                   href="#"
                   className="text-gray hover-white font-weight-500">
-                  <i className="fal fa-phone-alt mr-1" /> +91 261 229 5000{" "}
-                </Link>{" "}
+                  <i className="fal fa-phone-alt mr-1" /> +91 261 229 5000
+                </Link>
               </li>
               <li className="py-1">
                 <Link
                   href="mailto:info@kalamandirjewellers.com"
                   className="text-gray hover-white font-weight-500">
-                  <i className="fal fa-paper-plane mr-1" />{" "}
+                  <i className="fal fa-paper-plane mr-1" />
                   info@kalamandirjewellers.com
-                </Link>{" "}
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-2 mt-md-7 row align-items-center f-border-top text-center">
           <p className="mx-auto pt-4 mb-4 mb-md-0 text-gray fs-14 font-weight-500">
-            © 2023 K M Choksi jewellers. | Website Designed By:{" "}
+            © 2023 K M Choksi jewellers. | Website Designed By:
             <Link
               target="_blank"
               className="text-gray hover-white"

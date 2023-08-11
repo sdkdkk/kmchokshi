@@ -264,7 +264,7 @@ const Home = () => {
                   and ambition to power ahead.
                 </p>
                 <Link
-                  to="shop-page-04.html"
+                  to="/"
                   className="btn btn-outline-primary text-uppercase letter-spacing-05">
                   About Us
                 </Link>
@@ -377,7 +377,7 @@ const Home = () => {
                 </p>
                 <div>
                   <Link
-                    to="shop-page-06.html"
+                    to="/"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>

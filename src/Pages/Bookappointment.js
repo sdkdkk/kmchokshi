@@ -7,7 +7,7 @@ const Bookappointment = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-6">
-              <img className="w-100" src="images/book-appointment.jpg" alt=""/>
+              <img className="w-100" src="images/book-appointment.jpg" alt="" />
             </div>
             <div className="col-lg-6 d-flex align-items-center justify-content-center pl-lg-10 pr-lg-10">
               <form>

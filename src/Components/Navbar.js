@@ -12,6 +12,12 @@ const Navbar = () => {
     setIsSearchPopupOpen(false); // Close the popup after search
   };
 
+  const [isSearchPopupVisible, setSearchPopupVisible] = useState(false);
+
+  const handleSearchClick = () => {
+    setSearchPopupVisible((prevVisible) => !prevVisible);
+  };
+
   return (
     <>
       <header className="main-header navbar-light header-sticky header-sticky-smart">
@@ -21,7 +27,8 @@ const Navbar = () => {
               <nav className="navbar navbar-expand-xl px-0 py-2 py-xl-0 row no-gutters">
                 <div className="col-xl-2">
                   <Link className="navbar-brand mr-0" to="/">
-                    <img src="images/logo.svg" alt="K M Choksi" />
+                    <img src="images/logo.png" alt="K M Choksi" 
+                    style={{ height: "auto", maxWidth: "100%" }}/>
                   </Link>
                 </div>
                 <div className="col-xl-6 d-flex justify-content-center position-static">
@@ -83,17 +90,23 @@ const Navbar = () => {
                                 </Link>
                               </div>
                               <div className="dropdown-item">
-                                <Link className="dropdown-link" to="/ourproducts">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
                                   Ring
                                 </Link>
                               </div>
                               <div className="dropdown-item">
-                                <Link className="dropdown-link" to="/ourproducts">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
                                   Mangalsutra
                                 </Link>
                               </div>
                               <div className="dropdown-item">
-                                <Link className="dropdown-link" to="/ourproducts">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
                                   Braceletes
                                 </Link>
                               </div>
@@ -211,6 +224,7 @@ const Navbar = () => {
                         />
                         <div className="input-group-append position-absolute pos-fixed-right-center">
                           <button
+                            onClick={handleSearchClick}
                             className="input-group-text bg-transparent border-0 text-primary fs-18 px-0"
                             type="submit">
                             <i className="far fa-search" />
@@ -245,21 +259,42 @@ const Navbar = () => {
                   data-canvas-options='{"width":"250px","container":".sidenav"}'>
                   <span className="fs-24 toggle-icon" />
                 </button>
-                <Link
-                  className="navbar-brand d-inline-block mx-auto"
-                  to="index.html">
+                <Link className="navbar-brand d-inline-block mx-auto" to="/">
                   <img src="images/logo.png" alt="Furnitor" />
                 </Link>
                 <Link
-                  to="#search-popup"
-                  data-gtf-mfp="true"
-                  data-mfp-options='{"type":"inline","focus": "#keyword","mainClass": "mfp-search-form mfp-move-from-top mfp-align-top"}'
+                  onClick={handleSearchClick} // Call the handleSearchClick function on button click
                   className="nav-search d-block py-0"
                   title="Search">
                   <i className="far fa-search" />
                 </Link>
               </nav>
             </div>
+            {/* Conditionally render the search popup based on the state */}
+            {isSearchPopupVisible && (
+              <div id="search-popup">
+                <form onSubmit={handleSearchSubmit}>
+                  <div className="input-group position-relative">
+                    <input
+                      type="text"
+                      id="keyword"
+                      name="keyword"
+                      className="form-control border-0 border-bottom border-2x bg-transparent text-white border-white fs-24 form-control-lg"
+                      placeholder="Search Something..."
+                      value={searchKeyword}
+                      onChange={(e) => setSearchKeyword(e.target.value)}
+                    />
+                    <div className="input-group-append position-absolute pos-fixed-right-center">
+                      <button
+                        className="input-group-text bg-transparent border-0 text-white fs-30 px-0 btn-lg"
+                        type="submit">
+                        <i className="far fa-search" />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            )}
           </div>
         </div>
       </header>
