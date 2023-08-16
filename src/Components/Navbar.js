@@ -27,8 +27,11 @@ const Navbar = () => {
               <nav className="navbar navbar-expand-xl px-0 py-2 py-xl-0 row no-gutters">
                 <div className="col-xl-2">
                   <Link className="navbar-brand mr-0" to="/">
-                    <img src="images/logo.png" alt="K M Choksi" 
-                    style={{ maxHeight: "60px", maxWidth: "100%" }}/>
+                    <img
+                      src="images/logo.png"
+                      alt="K M Choksi"
+                      style={{ maxHeight: "60px", maxWidth: "100%" }}
+                    />
                   </Link>
                 </div>
                 <div className="col-xl-6 d-flex justify-content-center position-static">

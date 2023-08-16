@@ -264,7 +264,7 @@ const Home = () => {
                   and ambition to power ahead.
                 </p>
                 <Link
-                  to="/"
+                  to="/history"
                   className="btn btn-outline-primary text-uppercase letter-spacing-05">
                   About Us
                 </Link>
