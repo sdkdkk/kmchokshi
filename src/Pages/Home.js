@@ -345,7 +345,7 @@ const Home = () => {
                 </p>
                 <div>
                   <Link
-                    to="#"
+                    to="/productdetails"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>
@@ -377,7 +377,7 @@ const Home = () => {
                 </p>
                 <div>
                   <Link
-                    to="/"
+                    to="/productdetails"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>
