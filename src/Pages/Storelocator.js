@@ -1,7 +1,16 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 const Storelocator = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({});
+
+  const onSubmit = async (data) => {};
+
   return (
     <main id="content">
       <section className="inner-banner">
@@ -89,49 +98,95 @@ const Storelocator = () => {
                 If you’ve got great products your making or looking to work with
                 us then drop us a line.
               </p>
-              <form>
+              <form onSubmit={handleSubmit((data) => onSubmit(data))}>
                 <div className="row mb-6">
                   <div className="col-sm-6">
                     <input
                       type="text"
-                      className="form-control"
+                      className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                       placeholder="Your Name*"
                       required=""
+                      name="name"
+                      {...register("name", {
+                        required: true,
+                      })}
                     />
+                    {errors.name && (
+                      <p className="error text-right text-danger">
+                        Please Enter a Name
+                      </p>
+                    )}
                   </div>
                   <div className="col-sm-6">
                     <input
                       type="email"
-                      className="form-control"
+                      className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                       placeholder="Your Email*"
                       required=""
+                      name="email"
+                      {...register("email", {
+                        required: true,
+                      })}
                     />
+                    {errors.name && (
+                      <p className="error text-right text-danger">
+                        Please Enter a Email
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="row mb-6">
                   <div className="col-sm-6">
                     <input
                       type="text"
-                      className="form-control"
+                      className={`form-control ${errors.mobileno ? 'is-invalid' : ''}`}
                       placeholder="Mobile No.*"
                       required=""
+                      name="mobileno"
+                      {...register("mobileno", {
+                        required: true,
+                      })}
                     />
+                    {errors.name && (
+                      <p className="error text-right text-danger">
+                        Please Enter a Mobile No
+                      </p>
+                    )}
                   </div>
                   <div className="col-sm-6">
                     <input
-                      type="email"
-                      className="form-control"
+                      type="text"
+                      className={`form-control ${errors.subject ? 'is-invalid' : ''}`}
                       placeholder="Subject"
                       required=""
+                      name="subject"
+                      {...register("subject", {
+                        required: true,
+                      })}
                     />
+                    {errors.name && (
+                      <p className="error text-right text-danger">
+                        Please Enter a Subject
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="form-group mb-4">
                   <textarea
-                    className="form-control"
+                    type="text"
+                    className={`form-control ${errors.comment ? 'is-invalid' : ''}`}
                     rows={6}
-                    defaultValue={"Comment"}
+                    name="comment"
+                    {...register("comment", {
+                      required: "Please Enter a Comment",
+                    })}
                   />
+
+                  {errors.comment && (
+                    <p className="error text-right text-danger">
+                      Please Enter a Comment
+                    </p>
+                  )}
                 </div>
                 <div className="custom-control custom-checkbox mb-6">
                   <input
