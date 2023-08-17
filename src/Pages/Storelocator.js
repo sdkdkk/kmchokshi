@@ -103,7 +103,9 @@ const Storelocator = () => {
                   <div className="col-sm-6">
                     <input
                       type="text"
-                      className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                      className={`form-control ${
+                        errors.name ? "is-invalid" : ""
+                      }`}
                       placeholder="Your Name*"
                       required=""
                       name="name"
@@ -120,7 +122,9 @@ const Storelocator = () => {
                   <div className="col-sm-6">
                     <input
                       type="email"
-                      className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                      className={`form-control ${
+                        errors.email ? "is-invalid" : ""
+                      }`}
                       placeholder="Your Email*"
                       required=""
                       name="email"
@@ -139,7 +143,9 @@ const Storelocator = () => {
                   <div className="col-sm-6">
                     <input
                       type="text"
-                      className={`form-control ${errors.mobileno ? 'is-invalid' : ''}`}
+                      className={`form-control ${
+                        errors.mobileno ? "is-invalid" : ""
+                      }`}
                       placeholder="Mobile No.*"
                       required=""
                       name="mobileno"
@@ -156,7 +162,9 @@ const Storelocator = () => {
                   <div className="col-sm-6">
                     <input
                       type="text"
-                      className={`form-control ${errors.subject ? 'is-invalid' : ''}`}
+                      className={`form-control ${
+                        errors.subject ? "is-invalid" : ""
+                      }`}
                       placeholder="Subject"
                       required=""
                       name="subject"
@@ -174,7 +182,9 @@ const Storelocator = () => {
                 <div className="form-group mb-4">
                   <textarea
                     type="text"
-                    className={`form-control ${errors.comment ? 'is-invalid' : ''}`}
+                    className={`form-control ${
+                      errors.comment ? "is-invalid" : ""
+                    }`}
                     rows={6}
                     name="comment"
                     {...register("comment", {

@@ -4,8 +4,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick";
 import Slider from "react-slick";
+import { useForm } from "react-hook-form";
 
 const Productdetails = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({});
+
+  const onSubmit = async (data) => {};
+
   const settings = {
     dots: true,
     infinite: true,
@@ -52,7 +61,7 @@ const Productdetails = () => {
                   <Link
                     className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
                     to="#gallery-3">
-                    <img src="images/product-page-19-sm.jpg" alt="Thumb 3" />
+                    <img src="images/product-page-17-sm.jpg" alt="Thumb 3" />
                   </Link>
                 </div>
                 <div className="scrollspy-images ml-md-12">
@@ -73,12 +82,12 @@ const Productdetails = () => {
                     <img src="images/product-page-18.jpg" alt="" />
                   </Link>
                   <Link
-                    to="images/product-page-19.jpg"
+                    to="images/product-page-17.jpg"
                     data-gtf-mfp="true"
                     //   data-gallery-id={01}
                     className="d-block mb-2"
                     id="gallery-3">
-                    <img src="images/product-page-19.jpg" alt="" />
+                    <img src="images/product-page-17.jpg" alt="" />
                   </Link>
                 </div>
               </div>
@@ -127,7 +136,7 @@ const Productdetails = () => {
                     <span className="ml-1">Whatsapp Inquiry</span>
                   </Link>
                 </div>
-                <form>
+                <form onSubmit={handleSubmit((data) => onSubmit(data))}>
                   <div className="text-primary font-weight-500 fs-18 mb-4 mt-5">
                     Inquiry
                   </div>
@@ -135,18 +144,40 @@ const Productdetails = () => {
                     <div className="col-sm-6">
                       <input
                         type="text"
-                        className="form-control"
+                        className={`form-control ${
+                          errors.name ? "is-invalid" : ""
+                        }`}
                         placeholder="Your Name*"
                         required=""
+                        name="name"
+                        {...register("name", {
+                          required: true,
+                        })}
                       />
+                      {errors.name && (
+                        <p className="error text-right text-danger">
+                          Please Enter a Name
+                        </p>
+                      )}
                     </div>
                     <div className="col-sm-6">
                       <input
                         type="email"
-                        className="form-control"
+                        className={`form-control ${
+                          errors.name ? "is-invalid" : ""
+                        }`}
                         placeholder="Your Email*"
                         required=""
+                        name="email"
+                        {...register("email", {
+                          required: true,
+                        })}
                       />
+                      {errors.email && (
+                        <p className="error text-right text-danger">
+                          Please Enter a Email
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="row mb-3">
@@ -156,7 +187,16 @@ const Productdetails = () => {
                         className="form-control"
                         placeholder="Mobile No.*"
                         required=""
+                        name="mobileno"
+                        {...register("mobileno", {
+                          required: true,
+                        })}
                       />
+                      {errors.mobileno && (
+                        <p className="error text-right text-danger">
+                          Please Enter a Mobile No
+                        </p>
+                      )}
                     </div>
                     <div className="col-sm-6">
                       <input
@@ -164,15 +204,36 @@ const Productdetails = () => {
                         className="form-control"
                         placeholder="Subject"
                         required=""
+                        name="subject"
+                        {...register("subject", {
+                          required: true,
+                        })}
                       />
+                      {errors.mobileno && (
+                        <p className="error text-right text-danger">
+                          Please Enter a Subject
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="form-group mb-3">
                     <textarea
-                      className="form-control"
+                      type="text"
+                      className={`form-control ${
+                        errors.comment ? "is-invalid" : ""
+                      }`}
                       rows={6}
-                      defaultValue={"Message"}
+                      name="message"
+                      {...register("message", {
+                        required: "Please Enter a Message",
+                      })}
                     />
+
+                    {errors.message && (
+                      <p className="error text-right text-danger">
+                        Please Enter a Message
+                      </p>
+                    )}
                   </div>
                   <button
                     type="submit"
