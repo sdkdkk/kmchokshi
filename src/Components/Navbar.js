@@ -7,9 +7,8 @@ const Navbar = () => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    // Perform the search operation
     console.log("Search keyword:", searchKeyword);
-    setIsSearchPopupOpen(false); // Close the popup after search
+    setIsSearchPopupOpen(false); 
   };
 
   const [isSearchPopupVisible, setSearchPopupVisible] = useState(false);
@@ -27,8 +26,11 @@ const Navbar = () => {
               <nav className="navbar navbar-expand-xl px-0 py-2 py-xl-0 row no-gutters">
                 <div className="col-xl-2">
                   <Link className="navbar-brand mr-0" to="/">
-                    <img src="images/logo.png" alt="K M Choksi" 
-                    style={{ height: "auto", maxWidth: "100%" }}/>
+                    <img
+                      src="images/logo.png"
+                      alt="K M Choksi"
+                      style={{ maxHeight: "60px", maxWidth: "100%" }}
+                    />
                   </Link>
                 </div>
                 <div className="col-xl-6 d-flex justify-content-center position-static">
@@ -260,17 +262,16 @@ const Navbar = () => {
                   <span className="fs-24 toggle-icon" />
                 </button>
                 <Link className="navbar-brand d-inline-block mx-auto" to="/">
-                  <img src="images/logo.png" alt="Furnitor" />
+                  <img src="images/logo.png" alt="Furnitor" style={{ maxHeight: "40px", maxWidth: "100%" }} />
                 </Link>
                 <Link
-                  onClick={handleSearchClick} // Call the handleSearchClick function on button click
+                  onClick={handleSearchClick} 
                   className="nav-search d-block py-0"
                   title="Search">
                   <i className="far fa-search" />
                 </Link>
               </nav>
             </div>
-            {/* Conditionally render the search popup based on the state */}
             {isSearchPopupVisible && (
               <div id="search-popup">
                 <form onSubmit={handleSearchSubmit}>
@@ -302,7 +303,7 @@ const Navbar = () => {
         <div className="canvas-overlay"></div>
         <div className="pt-5 pb-7 card border-0 h-100">
           <div className="d-flex align-items-center card-header border-0 py-0 pl-8 pr-7 mb-9 bg-transparent">
-            <Link href="index-2.html" className="d-block w-52px">
+            <Link to="/" className="d-block w-52px">
               <img src="images/short_logo.png" alt="Furnitor" />
             </Link>
             <span className="canvas-close d-inline-block text-right fs-24 ml-auto lh-1 text-primary">
@@ -312,7 +313,7 @@ const Navbar = () => {
           <div className="overflow-y-auto pb-6 pl-8 pr-7 card-body pt-0">
             <ul className="navbar-nav main-menu px-0 ">
               <li className="nav-item py-1 px-0">
-                <Link className="nav-link p-0" href="#">
+                <Link className="nav-link p-0" to="/history">
                   History
                   <span className="caret" />
                 </Link>
@@ -320,28 +321,28 @@ const Navbar = () => {
               <li className="nav-item dropdown py-1 px-0">
                 <Link
                   className="nav-link dropdown-toggle p-0"
-                  href="#"
+                  to="/ourbrands"
                   data-toggle="dropdown">
                   Our Brands <span className="caret" />
                 </Link>
                 <div className="dropdown-menu p-0 dropdown-menu-listing x-animated x-fadeInUp">
                   <div className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourbrands">
                       Brand 01
                     </Link>
                   </div>
                   <div className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourbrands">
                       Brand 01
                     </Link>
                   </div>
                   <div className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourbrands">
                       Brand 01
                     </Link>
                   </div>
                   <div className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourbrands">
                       Brand 01
                     </Link>
                   </div>
@@ -350,39 +351,39 @@ const Navbar = () => {
               <li className="nav-item dropdown py-1 px-0">
                 <Link
                   className="nav-link dropdown-toggle p-0"
-                  href="#"
+                  to="/ourproducts"
                   data-toggle="dropdown">
                   Our Products
                   <span className="caret" />
                 </Link>
                 <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
                   <li className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourproducts">
                       Earring
                     </Link>
                   </li>
                   <li className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourproducts">
                       Ring
                     </Link>
                   </li>
                   <li className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourproducts">
                       Mangalsutra
                     </Link>
                   </li>
                   <li className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourproducts">
                       Braceletes
                     </Link>
                   </li>
                   <li className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourproducts">
                       Kadas
                     </Link>
                   </li>
                   <li className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/ourproducts">
                       Bangles
                     </Link>
                   </li>
@@ -391,31 +392,31 @@ const Navbar = () => {
               <li className="nav-item dropdown py-1 px-0">
                 <Link
                   className="nav-link dropdown-toggle p-0"
-                  href="#"
+                  to="/diamond"
                   data-toggle="dropdown">
                   Diamond
                   <span className="caret" />
                 </Link>
                 <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
                   <li className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/diamond">
                       Diamond
                     </Link>
                   </li>
                   <li className="dropdown-item">
-                    <Link className="dropdown-link" href="#">
+                    <Link className="dropdown-link" to="/diamond">
                       Diamond
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item py-1 px-0">
-                <Link className="nav-link  p-0" href="#">
+                <Link className="nav-link  p-0" to="/storelocator">
                   Store Locator
                 </Link>
               </li>
               <li className="nav-item py-1 px-0">
-                <Link className="nav-link  p-0" href="#">
+                <Link className="nav-link  p-0" to="/bookappointment">
                   Book Appointment
                 </Link>
               </li>
@@ -424,22 +425,30 @@ const Navbar = () => {
           <div className="card-footer bg-transparent border-0 mt-auto pl-8 pr-7 pb-0 pt-4">
             <ul className="list-inline d-flex align-items-center mb-3">
               <li className="list-inline-item mr-4">
-                <Link href="#" className="fs-20 lh-1">
+                <Link
+                  to="https://www.facebook.com/kmchoksi.jewellers/"
+                  target="_blank">
                   <i className="fab fa-facebook-f" />
                 </Link>
               </li>
               <li className="list-inline-item mr-4">
-                <Link href="#" className="fs-20 lh-1">
+                <Link
+                  to="https://twitter.com/i/flow/login?redirect_after_login=%2Fkmchoksi"
+                  target="_blank">
                   <i className="fab fa-twitter" />
                 </Link>
               </li>
               <li className="list-inline-item mr-4">
-                <Link href="#" className="fs-20 lh-1">
+                <Link
+                  to="https://www.instagram.com/k_m_choksi_official/?hl=en"
+                  target="_blank">
                   <i className="fab fa-instagram" />
                 </Link>
               </li>
               <li className="list-inline-item mr-4">
-                <Link href="#" className="fs-20 lh-1">
+                <Link
+                  to="https://www.youtube.com/watch?v=DuRbhBqnFmI"
+                  target="_blank">
                   <i className="fab fa-youtube" />
                 </Link>
               </li>
@@ -451,7 +460,7 @@ const Navbar = () => {
       <>
         <div className="position-fixed pos-fixed-bottom-right p-6 z-index-10">
           <Link
-            href="#"
+            to="#"
             className="gtf-back-to-top bg-white text-primary hover-white bg-hover-primary shadow p-0 w-52px h-52 rounded-circle fs-20 d-flex align-items-center justify-content-center"
             title="Back To Top">
             <i className="fal fa-arrow-up" />

@@ -253,7 +253,7 @@ const Home = () => {
               isVisible={true} className="col-md-6 mb-6 mb-md-0 pl-lg-17 pl-md-4" >
               <div className="mxw-405px pl-md-2">
                 <h2 className="fs-30 mb-5 lh-12">ABOUT US</h2>
-                <p className="mb-7 font-weight-500">
+                <p className="mb-7 font-weight-500 text-justify">
                   Building a legacy brand in the jewellery business is a
                   lifelong pursuit. It requires a deeply conscious understanding
                   of your customer and their needs; boundless creativity to
@@ -264,7 +264,7 @@ const Home = () => {
                   and ambition to power ahead.
                 </p>
                 <Link
-                  to="/"
+                  to="/history"
                   className="btn btn-outline-primary text-uppercase letter-spacing-05">
                   About Us
                 </Link>
@@ -345,7 +345,7 @@ const Home = () => {
                 </p>
                 <div>
                   <Link
-                    to="#"
+                    to="/productdetails"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>
@@ -377,7 +377,7 @@ const Home = () => {
                 </p>
                 <div>
                   <Link
-                    to="/"
+                    to="/productdetails"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>

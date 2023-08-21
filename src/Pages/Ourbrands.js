@@ -92,7 +92,7 @@ const Ourbrands = () => {
                 </p>
                 <div>
                   <Link
-                    to="shop-page-06.html"
+                    to="#"
                     className="btn btn-outline-primary text-uppercase letter-spacing-05">
                     EXPLORE THE COLLECTION
                   </Link>
