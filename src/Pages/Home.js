@@ -5,8 +5,28 @@ import "slick-carousel/slick/slick";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { Animated } from "react-animated-css";
+import { homeslider } from "../Redux/GethomeSliderSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { brandlogo } from "../Redux/GetbrandlogoSlice";
 
 const Home = () => {
+
+  const homesliders = useSelector(
+    (state) => state.GethomeSlider.data?.document || []
+  );
+  const brandlogos = useSelector(
+    (state) => state.getbrandlogo.data?.document || []
+  );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(homeslider())
+    dispatch(brandlogo());
+  }, [dispatch]);
+
+  console.log(homesliders)
+
   useEffect(() => {
   }, []);
 
@@ -29,24 +49,27 @@ const Home = () => {
         <Slider
           className="slick-slider slick-dots-light dots-inner-center"
           {...settings}>
-          <div className="box">
-            <div className="d-flex flex-column">
-              <img className="desktop" src="images/slider/01.jpg" alt="" />
-              {/* <img className="mobile" src="images/slider/mobile01.jpg" alt="" /> */}
-            </div>
-          </div>
-          <div className="box">
-            <div className="d-flex flex-column">
-              <img className="desktop" src="images/slider/02.jpg" alt="" />
-              {/* <img className="mobile" src="images/slider/mobile02.jpg" alt="" /> */}
-            </div>
-          </div>
-          <div className="box">
-            <div className="d-flex flex-column">
-              <img className="desktop" src="images/slider/03.jpg" alt="" />
-              {/* <img className="mobile" src="images/slider/mobile03.jpg" alt="" /> */}
-            </div>
-          </div>
+          {homesliders &&
+            homesliders.map((data) => (
+              // Check if isActive is true before rendering the image
+              data.isActive && (
+                <div className="box" key={data.id}>
+                  <div className="d-flex flex-column">
+                    <img
+                      src={data.slider_image.replace(
+                        "http://localhost:5000",
+                        "https://kmchoksi.onrender.com"
+                      )}
+                      alt=""
+
+                    />
+                    {/* <img className="desktop" src="images/slider/01.jpg" alt="" /> */}
+                    {/* <img className="mobile" src="images/slider/mobile01.jpg" alt="" /> */}
+                  </div>
+                </div>
+              )
+            ))}
+
         </Slider>
       </section>
       <section className="pb-8 pt-10">
@@ -289,36 +312,24 @@ const Home = () => {
       <section className="pt-8 pb-10 border-bottom">
         <div className="container">
           <Slider {...settings1}>
-            <div className="box">
-              <Link to="#" className="d-block">
-                <img src="images/brands/brand-1.jpg" alt="brand Logo 01" />
-              </Link>
-            </div>
-            <div className="box">
-              <Link to="#" className="d-block">
-                <img src="images/brands/brand-2.jpg" alt="brand Logo 02" />
-              </Link>
-            </div>
-            <div className="box">
-              <Link to="#" className="d-block">
-                <img src="images/brands/brand-1.jpg" alt="Client Logo 03" />
-              </Link>
-            </div>
-            <div className="box">
-              <Link to="#" className="d-block">
-                <img src="images/brands/brand-2.jpg" alt="Client Logo 04" />
-              </Link>
-            </div>
-            <div className="box">
-              <Link to="#" className="d-block">
-                <img src="images/brands/brand-1.jpg" alt="Client Logo 05" />
-              </Link>
-            </div>
-            <div className="box">
-              <Link to="#" className="d-block">
-                <img src="images/brands/brand-2.jpg" alt="Client Logo 06" />
-              </Link>
-            </div>
+            {brandlogos && brandlogos.map((data) => (
+              data.isActive && (
+              <div className="box">
+                <Link to="#" className="d-block">
+                  <img
+                    src={data.brand_image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </Link>
+              </div>
+              )
+            ))}
+
           </Slider>
         </div>
       </section>
@@ -328,7 +339,7 @@ const Home = () => {
             <Animated
               animationOut="fadeInLeft"
               animationIn="fadeInLeft"
-              isVisible={true}  className="col-lg-6 text-center brand-bg mb-5" data-animate="fadeInLeft">
+              isVisible={true} className="col-lg-6 text-center brand-bg mb-5" data-animate="fadeInLeft">
               <img
                 className="w-100"
                 src="images/brands/brand-img.jpg"
@@ -357,7 +368,7 @@ const Home = () => {
             <Animated
               animationOut="fadeInRight"
               animationIn="fadeInRight"
-              isVisible={true}  className="col-lg-6 text-center brand-bg mb-5">
+              isVisible={true} className="col-lg-6 text-center brand-bg mb-5">
               <img
                 className="w-100"
                 src="images/brands/brand-img01.jpg"
