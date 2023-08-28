@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { branchmaster } from "../Redux/GetbranchmasterSlice";
 
 const Storelocator = () => {
+  const branchmasters = useSelector(
+    (state) => state.branchmaster.data?.document || []
+  );
+
+  console.log(branchmasters);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(branchmaster());
+  }, [dispatch]);
+
   const {
     register,
     handleSubmit,
@@ -34,33 +46,38 @@ const Storelocator = () => {
       </section>
       <section className="pt-lg-10 pt-5 pb-10">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-4 mb-6 d-flex align-items-center">
-              <div className="text-left px-5">
-                <h4 className="font-weight-bold mb-2">Surat</h4>
-                <p className="mb-3">
-                  Choksi House, <br />
-                  Opp.Regent Arcade, Ghod Dod Rd,
-                  <br />
-                  Surat, Gujarat 395001
-                </p>
-                <p className=" mb-0">Contact : 09726014777</p>
-                <p className=" mb-0">
-                  Email :
-                  <Link to="mailto:info@kmchoksi@gmail.com">
-                    info@kmchoksi@gmail.com
-                  </Link>
-                </p>
-                <Link className="google-map" to="#">
-                  view on google map
-                </Link>
+          {branchmasters &&
+            branchmasters.map((data) => (
+              <div className="row">
+                <div className="col-lg-4 mb-6 d-flex align-items-center">
+                  <div className="text-left px-5">
+                    <h4 className="font-weight-bold mb-2">{data.city}</h4>
+                    <p className="mb-3">{data.address}</p>
+                    <p className=" mb-0">Contact : {data.mobile_no}</p>
+                    <p className=" mb-0">
+                      Email :
+                      <Link to="mailto:info@kmchoksi@gmail.com">
+                        info@kmchoksi@gmail.com
+                      </Link>
+                    </p>
+                    <Link className="google-map" to="#">
+                      view on google map
+                    </Link>
+                  </div>
+                </div>
+                <div className="col-lg-8 mb-6 mb-md-0">
+                  <img
+                    src={data.branch_image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt=""
+                  />
+                </div>
               </div>
-            </div>
-            <div className="col-lg-8 mb-6 mb-md-0">
-              <img src="images/contact/surat.jpg" alt="" />
-            </div>
-          </div>
-          <div className="row mt-10">
+            ))}
+
+          {/* <div className="row mt-10">
             <div className="col-lg-4 mb-6 d-flex align-items-center">
               <div className="text-left px-5">
                 <h4 className="font-weight-bold mb-2">Kosamba</h4>
@@ -84,7 +101,7 @@ const Storelocator = () => {
             <div className="col-lg-8 mb-6 mb-md-0">
               <img src="images/contact/kosamba.jpg" alt="" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="pb-12">

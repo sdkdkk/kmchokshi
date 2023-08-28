@@ -8,9 +8,10 @@ import { Animated } from "react-animated-css";
 import { homeslider } from "../Redux/GethomeSliderSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { brandlogo } from "../Redux/GetbrandlogoSlice";
+import { collectionbanner } from "../Redux/GetcollectionbannerSlice";
+import { boximage } from "../Redux/GetboximageSlice";
 
 const Home = () => {
-
   const homesliders = useSelector(
     (state) => state.GethomeSlider.data?.document || []
   );
@@ -18,17 +19,23 @@ const Home = () => {
     (state) => state.getbrandlogo.data?.document || []
   );
 
-  const dispatch = useDispatch();
+  const collectionbanners = useSelector(
+    (state) => state.collectionbanner.data?.document || []
+  );
 
+  const boximages = useSelector(
+    (state) => state.getboximage.data?.document || []
+  );
+
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(homeslider())
+    dispatch(homeslider());
     dispatch(brandlogo());
+    dispatch(collectionbanner());
+    dispatch(boximage());
   }, [dispatch]);
 
-  console.log(homesliders)
-
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   const settings = {
     slidesToShow: 1,
@@ -50,141 +57,49 @@ const Home = () => {
           className="slick-slider slick-dots-light dots-inner-center"
           {...settings}>
           {homesliders &&
-            homesliders.map((data) => (
-              // Check if isActive is true before rendering the image
-              data.isActive && (
-                <div className="box" key={data.id}>
-                  <div className="d-flex flex-column">
-                    <img
-                      src={data.slider_image.replace(
-                        "http://localhost:5000",
-                        "https://kmchoksi.onrender.com"
-                      )}
-                      alt=""
-
-                    />
-                    {/* <img className="desktop" src="images/slider/01.jpg" alt="" /> */}
-                    {/* <img className="mobile" src="images/slider/mobile01.jpg" alt="" /> */}
+            homesliders.map(
+              (data) =>
+                // Check if isActive is true before rendering the image
+                data.isActive && (
+                  <div className="box" key={data.id}>
+                    <div className="d-flex flex-column">
+                      <img
+                        src={data.slider_image.replace(
+                          "http://localhost:5000",
+                          "https://kmchoksi.onrender.com"
+                        )}
+                        alt=""
+                      />
+                      {/* <img className="desktop" src="images/slider/01.jpg" alt="" /> */}
+                      {/* <img className="mobile" src="images/slider/mobile01.jpg" alt="" /> */}
+                    </div>
                   </div>
-                </div>
-              )
-            ))}
-
+                )
+            )}
         </Slider>
       </section>
       <section className="pb-8 pt-10">
         <div className="container border-bottom pb-8 pb-lg-8">
           <h1 className="text-center mb-5 fs-30">KM CHOKSI COLLECTION</h1>
           <div className="d-flex flex-wrap client-logo-02 justify-content-center">
-            <Animated
-              animationOut="fadeInLeft"
-              animationIn="fadeInLeft"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/01.jpg" alt="collection 01" />
-              <h4>Gold Coins</h4>
-            </Animated>
-
-            <Animated
-              animationOut="fadeInLeft"
-              animationIn="fadeInLeft"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/02.jpg" alt="collection Logo 02" />
-              <h4>Earrings</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/03.jpg" alt="collection Logo 03" />
-              <h4>Pendants</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/04.jpg" alt="collection Logo 04" />
-              <h4>Finger Rings</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/05.jpg" alt="collection Logo 05" />
-              <h4>Mangalsutras</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/06.jpg" alt="collection Logo 06" />
-              <h4>Neckwear</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/07.jpg" alt="collection Logo 07" />
-              <h4>Wedding Rings</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/08.jpg" alt="collection Logo 08" />
-              <h4>Chains</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/09.jpg" alt="collection Logo 09" />
-              <h4>Bangles</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/10.jpg" alt="collection Logo 10" />
-              <h4>Bracelets</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/11.jpg" alt="collection Logo 11" />
-              <h4>Nose Pins</h4>
-            </Animated>
-            <Animated
-              animationOut="fadeIn"
-              animationIn="fadeIn"
-              isVisible={true}
-              to="#"
-              className="d-block item ">
-              <img src="images/collection/12.jpg" alt="collection Logo 12" />
-              <h4>Pendant Sets</h4>
-            </Animated>
+            {collectionbanners &&
+              collectionbanners.map((data) => (
+                <Animated
+                  animationOut="fadeInLeft"
+                  animationIn="fadeInLeft"
+                  isVisible={true}
+                  to="#"
+                  className="d-block item ">
+                  <img
+                    src={data.collection_image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt="collection 01"
+                  />
+                  <h4>{data.title}</h4>
+                </Animated>
+              ))}
           </div>
         </div>
       </section>
@@ -273,7 +188,8 @@ const Home = () => {
             <Animated
               animationOut="fadeInLeft"
               animationIn="fadeInLeft"
-              isVisible={true} className="col-md-6 mb-6 mb-md-0 pl-lg-17 pl-md-4" >
+              isVisible={true}
+              className="col-md-6 mb-6 mb-md-0 pl-lg-17 pl-md-4">
               <div className="mxw-405px pl-md-2">
                 <h2 className="fs-30 mb-5 lh-12">ABOUT US</h2>
                 <p className="mb-7 font-weight-500 text-justify">
@@ -296,7 +212,8 @@ const Home = () => {
             <Animated
               animationOut="fadeInRight"
               animationIn="fadeInRight"
-              isVisible={true} className="col-md-6 parralax-images">
+              isVisible={true}
+              className="col-md-6 parralax-images">
               <div className="row">
                 <div className="col-6 col-lg-6 pb-5">
                   <img src="images/about/about01.jpg" alt="about" />
@@ -312,24 +229,25 @@ const Home = () => {
       <section className="pt-8 pb-10 border-bottom">
         <div className="container">
           <Slider {...settings1}>
-            {brandlogos && brandlogos.map((data) => (
-              data.isActive && (
-              <div className="box">
-                <Link to="#" className="d-block">
-                  <img
-                    src={data.brand_image.replace(
-                      "http://localhost:5000",
-                      "https://kmchoksi.onrender.com"
-                    )}
-                    alt=""
-                    width="50"
-                    height="50"
-                  />
-                </Link>
-              </div>
-              )
-            ))}
-
+            {brandlogos &&
+              brandlogos.map(
+                (data) =>
+                  data.isActive && (
+                    <div className="box">
+                      <Link to="#" className="d-block">
+                        <img
+                          src={data.brand_image.replace(
+                            "http://localhost:5000",
+                            "https://kmchoksi.onrender.com"
+                          )}
+                          alt=""
+                          width="50"
+                          height="50"
+                        />
+                      </Link>
+                    </div>
+                  )
+              )}
           </Slider>
         </div>
       </section>
@@ -339,7 +257,9 @@ const Home = () => {
             <Animated
               animationOut="fadeInLeft"
               animationIn="fadeInLeft"
-              isVisible={true} className="col-lg-6 text-center brand-bg mb-5" data-animate="fadeInLeft">
+              isVisible={true}
+              className="col-lg-6 text-center brand-bg mb-5"
+              data-animate="fadeInLeft">
               <img
                 className="w-100"
                 src="images/brands/brand-img.jpg"
@@ -368,7 +288,8 @@ const Home = () => {
             <Animated
               animationOut="fadeInRight"
               animationIn="fadeInRight"
-              isVisible={true} className="col-lg-6 text-center brand-bg mb-5">
+              isVisible={true}
+              className="col-lg-6 text-center brand-bg mb-5">
               <img
                 className="w-100"
                 src="images/brands/brand-img01.jpg"
@@ -378,7 +299,8 @@ const Home = () => {
             <Animated
               animationOut="fadeInLeft"
               animationIn="fadeInLeft"
-              isVisible={true} className="col-lg-6">
+              isVisible={true}
+              className="col-lg-6">
               <div className="pr-sm-10 d-flex flex-column justify-content-center h-100 text-lg-right align-i-center">
                 <h2 className="fs-34 mb-0">KANYADAN</h2>
                 <h3 className="fs-24 mb-3">PURE WEDDING COLLECTION</h3>
@@ -435,30 +357,18 @@ const Home = () => {
           <h4 className="fs-18 text-center">Follow us on Instagram</h4>
           <h1 className="fs-30 mb-8 text-center">k_m_ choksi_official</h1>
           <div className="row no-gutters">
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <img src="images/insta/01.jpg" alt="" />
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <img src="images/insta/02.jpg" alt="" />
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <img src="images/insta/03.jpg" alt="" />
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <img src="images/insta/04.jpg" alt="" />
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <img src="images/insta/05.jpg" alt="" />
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <img src="images/insta/06.jpg" alt="" />
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <img src="images/insta/07.jpg" alt="" />
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <img src="images/insta/08.jpg" alt="" />
-            </div>
+            {boximages &&
+              boximages.map((data) => (
+                <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
+                  <img
+                    src={data.box_image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt=""
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </section>
