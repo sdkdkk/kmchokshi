@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { Animated } from "react-animated-css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick";
 import Slider from "react-slick";
+import { useDispatch, useSelector } from "react-redux";
+import { getcategory } from "../Redux/GetcategorySlice";
 
 const Ourproducts = () => {
   const [showFilterContent, setShowFilterContent] = useState(false);
@@ -228,11 +230,11 @@ const Ourproducts = () => {
             <div className="col-lg-6">
               <h2 className="mb-5">Wedding Rings</h2>
             </div>
-            <div
-              className="col-lg-6 text-right"
-              data-canvas="true"
-              data-canvas-options='{"container":".filter-canvas"}'>
-              {/* <button type="button" className="filter-btn">
+            <div className="col-lg-6 text-right">
+              <button
+                type="button"
+                className="filter-btn"
+                onClick={toggleFilterContent}>
                 <i className="far fa-align-left" /> Filter
               </button>
             </div>
@@ -266,6 +268,7 @@ const Ourproducts = () => {
                                 <Link
                                   to="#"
                                   className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
+                                  {/* Earring */}
                                   {data.name}
                                 </Link>
                               </li>
@@ -1017,7 +1020,7 @@ const Ourproducts = () => {
               </div>
             </Animated>
           </div>
-          <div className="canvas-sidebar filter-canvas">
+          {/* <div className="canvas-sidebar filter-canvas">
             <div className="canvas-overlay"></div>
             <form className="h-100">
               <div className="card border-0 pt-5 pb-8 pb-sm-13 h-100">
@@ -1212,7 +1215,7 @@ const Ourproducts = () => {
                 </div>
               </div>
             </form>
-          </div>
+          </div> */}
         </div>
       </section>
     </main>

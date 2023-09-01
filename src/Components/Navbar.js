@@ -5,29 +5,23 @@ import { cmslist } from "../Redux/GetcmsallSlice";
 import { getcategory } from "../Redux/GetcategorySlice";
 
 const Navbar = () => {
-
-  const cmslists = useSelector(
-    (state) => state.Getcmsall.data?.document || []
-  );
+  const cmslists = useSelector((state) => state.Getcmsall.data?.document || []);
 
   const getcategories = useSelector(
     (state) => state.Getcategory.data?.document || []
   );
 
   console.log(getcategories);
-  
 
   console.log(getcategories[0]?.name);
 
-  console.log(cmslists[0]?.title)
+  console.log(cmslists[0]?.title);
 
-  
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(cmslist());
     dispatch(getcategory());
   }, [dispatch]);
-
 
   const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -35,7 +29,7 @@ const Navbar = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     console.log("Search keyword:", searchKeyword);
-    setIsSearchPopupOpen(false); 
+    setIsSearchPopupOpen(false);
   };
 
   const [isSearchPopupVisible, setSearchPopupVisible] = useState(false);
@@ -64,7 +58,7 @@ const Navbar = () => {
                   <ul className="navbar-nav hover-menu main-menu px-0 mx-xl-n4">
                     <li className="nav-item dropdown-item-home dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link className="nav-link p-0" to="/history">
-                      {cmslists[1]?.title}
+                        {cmslists[1]?.title}
                         <span className="caret" />
                       </Link>
                     </li>
@@ -115,7 +109,9 @@ const Navbar = () => {
                             <div className="col-2">
                               {getcategories.slice(0, 4).map((item, index) => (
                                 <div className="dropdown-item" key={index}>
-                                  <Link className="dropdown-link" to="/ourproducts">
+                                  <Link
+                                    className="dropdown-link"
+                                    to="/ourproducts">
                                     {item.name}
                                   </Link>
                                 </div>
@@ -124,7 +120,9 @@ const Navbar = () => {
                             <div className="col-2">
                               {getcategories.slice(4, 8).map((item, index) => (
                                 <div className="dropdown-item" key={index}>
-                                  <Link className="dropdown-link" to="/ourproducts">
+                                  <Link
+                                    className="dropdown-link"
+                                    to="/ourproducts">
                                     {item.name}
                                   </Link>
                                 </div>
@@ -133,7 +131,9 @@ const Navbar = () => {
                             <div className="col-2">
                               {getcategories.slice(8, 12).map((item, index) => (
                                 <div className="dropdown-item" key={index}>
-                                  <Link className="dropdown-link" to="/ourproducts/">
+                                  <Link
+                                    className="dropdown-link"
+                                    to="/ourproducts/">
                                     {item.name}
                                   </Link>
                                 </div>
@@ -189,6 +189,27 @@ const Navbar = () => {
                         <span className="caret" />
                       </Link>
                     </li>
+                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
+                      <Link className="nav-link p-0" to="/storelocator">
+                        {/* Store Locator */}
+                        {cmslists[5]?.title}
+                        <span className="caret" />
+                      </Link>
+                    </li>
+                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
+                      <Link className="nav-link p-0" to="/storelocator">
+                        {/* Store Locator */}
+                        {cmslists[6]?.title}
+                        <span className="caret" />
+                      </Link>
+                    </li>
+                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
+                      <Link className="nav-link p-0" to="/storelocator">
+                        {/* Store Locator */}
+                        {cmslists[7]?.title}
+                        <span className="caret" />
+                      </Link>
+                    </li>
                   </ul>
                 </div>
                 <div className="col-xl-4 position-relative">
@@ -238,10 +259,14 @@ const Navbar = () => {
                   <span className="fs-24 toggle-icon" />
                 </button>
                 <Link className="navbar-brand d-inline-block mx-auto" to="/">
-                  <img src="images/logo.png" alt="Furnitor" style={{ maxHeight: "40px", maxWidth: "100%" }} />
+                  <img
+                    src="images/logo.png"
+                    alt="Furnitor"
+                    style={{ maxHeight: "40px", maxWidth: "100%" }}
+                  />
                 </Link>
                 <Link
-                  onClick={handleSearchClick} 
+                  onClick={handleSearchClick}
                   className="nav-search d-block py-0"
                   title="Search">
                   <i className="far fa-search" />
