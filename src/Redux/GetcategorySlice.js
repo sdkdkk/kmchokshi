@@ -13,12 +13,12 @@ const initialState = {
   errorMessage: "",
 };
 
-export const cmslist = createAsyncThunk(
-  "getcms/getcmsList",
+export const getcategory = createAsyncThunk(
+  "getcategories/getcategoriesList",
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `${baseurl}/getcms`
+        `${baseurl}/getcategory`
       );
       return response.data;
     } catch (error) {
@@ -28,19 +28,19 @@ export const cmslist = createAsyncThunk(
   }
 );
 
-export const GetcmsallSlice = createSlice({
-  name: "brandlogo",
+export const GetcategorySlice = createSlice({
+  name: "category",
   initialState,
   extraReducers: {
-    [cmslist.pending]: (state) => {
+    [getcategory.pending]: (state) => {
       state.isLoading = true;
     },
-    [cmslist.fulfilled]: (state, { payload }) => {
+    [getcategory.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = true;
       state.data = payload;
     },
-    [cmslist.rejected]: (state, { payload }) => {
+    [getcategory.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = false;
       state.errorMessage = payload;
@@ -48,4 +48,4 @@ export const GetcmsallSlice = createSlice({
   },
 });
 
-export default GetcmsallSlice.reducer;
+export default GetcategorySlice.reducer;

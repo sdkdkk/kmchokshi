@@ -7,6 +7,7 @@ import GetbranchmasterReducer from "../Redux/GetbranchmasterSlice";
 import GetaboutReducer from "../Redux/GetaboutSlice";
 import GetallbrandReducer from "../Redux/GetallbrandSlice";
 import GetcmsallReducer from "../Redux/GetcmsallSlice";
+import GetcategoryReducer from "../Redux/GetcategorySlice";
 
 const reducer = combineReducers({
   GethomeSlider: GethomeSliderReducer,
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   Getabout: GetaboutReducer,
   Getallbrand: GetallbrandReducer,
   Getcmsall: GetcmsallReducer,
+  Getcategory:GetcategoryReducer
 });
 
 export default reducer;

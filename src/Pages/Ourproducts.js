@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { Animated } from "react-animated-css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick";
 import Slider from "react-slick";
+import { useDispatch, useSelector } from "react-redux";
+import { getcategory } from "../Redux/GetcategorySlice";
 
 const Ourproducts = () => {
   const [showFilterContent, setShowFilterContent] = useState(false);
@@ -12,6 +14,26 @@ const Ourproducts = () => {
   const toggleFilterContent = () => {
     setShowFilterContent(!showFilterContent);
   };
+
+  const cmslists = useSelector(
+    (state) => state.Getcmsall.data?.document || []
+  );
+
+  const getcategories = useSelector(
+    (state) => state.Getcategory.data?.document || []
+  );
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getcategory());
+  }, [dispatch]);
+
+
+  
+
+  console.log(getcategories[0]?.name);
+
+
 
   const settings = {
     dots: true,
@@ -222,8 +244,6 @@ const Ourproducts = () => {
                 onClick={toggleFilterContent}>
                 <i className="far fa-align-left" /> Filter
               </button> 
-
-              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
             </div>
             <div
               className={`canvas-sidebar filter-canvas ${showFilterContent ? "show" : ""
@@ -252,56 +272,104 @@ const Ourproducts = () => {
                             <Link
                               to="#"
                               className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Earring
+                              {/* Earring */}
+                              {getcategories[0]?.name}
                             </Link>
                           </li>
                           <li className="mb-1">
                             <Link
                               to="#"
                               className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Ring
+                              {/* Ring */}
+                              {getcategories[1]?.name}
                             </Link>
                           </li>
                           <li className="mb-1">
                             <Link
                               to="#"
                               className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Mangalsutra
+                              {/* Mangalsutra */}
+                              {getcategories[2]?.name}
                             </Link>
                           </li>
                           <li className="mb-1">
                             <Link
                               to="#"
                               className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Braceletes
+                              {/* Braceletes */}
+                              {getcategories[3]?.name}
                             </Link>
                           </li>
                           <li className="mb-1">
                             <Link
                               to="#"
                               className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Kadas
+                              {/* Kadas */}
+                              {getcategories[4]?.name}
                             </Link>
                           </li>
                           <li className="mb-1">
                             <Link
                               to="#"
                               className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Chain
+                              {/* Chain */}
+                              {getcategories[5]?.name}
                             </Link>
                           </li>
                           <li className="mb-1">
                             <Link
                               to="#"
                               className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Pendant
+                              {/* Pendant */}
+                              {getcategories[6]?.name}
                             </Link>
                           </li>
                           <li className="mb-1">
                             <Link
                               to="#"
                               className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Diamond
+                              {/* Diamond */}
+                              {getcategories[7]?.name}
+                            </Link>
+                          </li>
+                          <li className="mb-1">
+                            <Link
+                              to="#"
+                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
+                              {/* Diamond */}
+                              {getcategories[8]?.name}
+                            </Link>
+                          </li>
+                          <li className="mb-1">
+                            <Link
+                              to="#"
+                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
+                              {/* Diamond */}
+                              {getcategories[9]?.name}
+                            </Link>
+                          </li>
+                          <li className="mb-1">
+                            <Link
+                              to="#"
+                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
+                              {/* Diamond */}
+                              {getcategories[10]?.name}
+                            </Link>
+                          </li>
+                          <li className="mb-1">
+                            <Link
+                              to="#"
+                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
+                              {/* Diamond */}
+                              {getcategories[11]?.name}
+                            </Link>
+                          </li>
+                          <li className="mb-1">
+                            <Link
+                              to="#"
+                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
+                              {/* Diamond */}
+                              {getcategories[12]?.name}
                             </Link>
                           </li>
                         </ul>

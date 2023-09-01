@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { cmslist } from "../Redux/GetcmsallSlice";
+import { getcategory } from "../Redux/GetcategorySlice";
 
 const Navbar = () => {
 
@@ -9,11 +10,22 @@ const Navbar = () => {
     (state) => state.Getcmsall.data?.document || []
   );
 
-  console.log(cmslists)
+  const getcategories = useSelector(
+    (state) => state.Getcategory.data?.document || []
+  );
+
+
+  
+
+  console.log(getcategories[0]?.name);
+
+  console.log(cmslists[0]?.title)
+
   
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(cmslist());
+    dispatch(getcategory());
   }, [dispatch]);
 
 
@@ -52,7 +64,7 @@ const Navbar = () => {
                   <ul className="navbar-nav hover-menu main-menu px-0 mx-xl-n4">
                     <li className="nav-item dropdown-item-home dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link className="nav-link p-0" to="/history">
-                        History
+                      {cmslists[1]?.title}
                         <span className="caret" />
                       </Link>
                     </li>
@@ -61,7 +73,8 @@ const Navbar = () => {
                         className="nav-link dropdown-toggle p-0"
                         to="/ourbrands"
                         data-toggle="dropdown">
-                        Our Brands
+                        {/* Our Brands */}
+                        {cmslists[2]?.title}
                         <span className="caret" />
                       </Link>
                       <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
@@ -92,7 +105,8 @@ const Navbar = () => {
                         className="nav-link dropdown-toggle p-0"
                         to="/ourproducts"
                         data-toggle="dropdown">
-                        Our Products
+                        {/* Our Products */}
+                        {cmslists[3]?.title}
                         <span className="caret" />
                       </Link>
                       <div className="dropdown-menu dropdown-menu-xl px-0 pb-10 pt-5 dropdown-menu-listing overflow-hidden x-animated x-fadeInUp">
@@ -103,58 +117,31 @@ const Navbar = () => {
                                 <Link
                                   className="dropdown-link"
                                   to="/ourproducts">
-                                  Earring
+                                  {getcategories[0]?.name}
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
                                   to="/ourproducts">
-                                  Ring
+                                  {/* Ring */}
+                                  {getcategories[1]?.name}
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
                                   to="/ourproducts">
-                                  Mangalsutra
+                                  {/* Mangalsutra */}
+                                  {getcategories[2]?.name}
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
                                   to="/ourproducts">
-                                  Braceletes
-                                </Link>
-                              </div>
-                            </div>
-                            <div className="col-2">
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  Kadas
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  Bangles
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  Chain
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  Pendant
+                                  {/* Braceletes */}
+                                  {getcategories[3]?.name}
                                 </Link>
                               </div>
                             </div>
@@ -163,28 +150,74 @@ const Navbar = () => {
                                 <Link
                                   className="dropdown-link"
                                   to="/ourproducts">
-                                  Diamond
+                                  {/* Kadas */}
+                                  {getcategories[4]?.name}
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
                                   to="/ourproducts">
-                                  Pendant Set
+                                  {/* Bangles */}
+                                  {getcategories[5]?.name}
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
                                   to="/ourproducts">
-                                  Necklace
+                                  {/* Chain */}
+                                  {getcategories[6]?.name}
                                 </Link>
                               </div>
                               <div className="dropdown-item">
                                 <Link
                                   className="dropdown-link"
                                   to="/ourproducts">
-                                  Antique Jewellery
+                                  {/* Pendant */}
+                                  {getcategories[7]?.name}
+                                </Link>
+                              </div>
+                            </div>
+                            <div className="col-2">
+                              <div className="dropdown-item">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
+                                  {/* Diamond */}
+                                  {getcategories[8]?.name}
+                                </Link>
+                              </div>
+                              <div className="dropdown-item">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
+                                  {/* Pendant Set */}
+                                  {getcategories[9]?.name}
+                                </Link>
+                              </div>
+                              <div className="dropdown-item">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
+                                  {/* Necklace */}
+                                  {getcategories[10]?.name}
+                                </Link>
+                              </div>
+                              <div className="dropdown-item">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
+                                  {/* Antique Jewellery */}
+                                  {getcategories[11]?.name}
+                                </Link>
+                              </div>
+                              <div className="dropdown-item">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/ourproducts">
+                                  {/* Antique Jewellery */}
+                                  {getcategories[12]?.name}
                                 </Link>
                               </div>
                             </div>
@@ -224,7 +257,8 @@ const Navbar = () => {
                     </li> */}
                     <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link className="nav-link p-0" to="/storelocator">
-                        Store Locator
+                        {/* Store Locator */}
+                        {cmslists[4]?.title}
                         <span className="caret" />
                       </Link>
                     </li>

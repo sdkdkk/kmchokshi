@@ -34,7 +34,6 @@ const History = () => {
           </div>
         </div>
       </section>
-
       {Getabouts &&
         Getabouts.map((data) => (
           <section className="pt-5 pt-md-15 pb-md-15">
