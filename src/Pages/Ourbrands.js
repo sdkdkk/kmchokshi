@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Animated } from "react-animated-css";
+import { useDispatch, useSelector } from "react-redux";
+import { Allbrand } from "../Redux/GetallbrandSlice";
 
 const Ourbrands = () => {
+  const Allbrands = useSelector(
+    (state) => state.Getallbrand.data?.document || []
+  );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(Allbrand());
+  }, [dispatch]);
+  console.log(Allbrands);
+
   return (
     <main id="content">
       <section className="inner-banner">
@@ -26,17 +39,20 @@ const Ourbrands = () => {
       </section>
       <section className="pt-10 pb-12">
         <div className="container-fluid">
-          <div className="row ">
+          {Allbrands && Allbrands.map((data,index)=>(
+            <div className={`row pt-8 ${index % 2 === 0 ? '' : 'flex-md-row-reverse'}`} key={index}>
             <Animated
               animationOut="fadeInLeft"
               animationIn="fadeInLeft"
               isVisible={true}
               className="col-lg-6 text-center brand-bg mb-5">
-              <img
-                className="w-100"
-                src="images/brands/brand-img.jpg"
-                alt="brand"
-              />
+                <img
+                    src={data.category_logo_image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt=""
+                  />
             </Animated>
             <Animated
               animationOut="fadeInRight"
@@ -45,7 +61,13 @@ const Ourbrands = () => {
               className="col-lg-6">
               <div className="pl-sm-10 pl-sm-0 d-flex flex-column justify-content-center align-i-center h-100">
                 <div className="brand-logo">
-                  <img src="images/brands/brand-1.jpg" alt="" />
+                <img
+                    src={data.logo_image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt=""
+                  />
                 </div>
                 <h2 className="fs-34 mb-0">KANYADAN</h2>
                 <h3 className="fs-24 mb-3">PURE WEDDING COLLECTION</h3>
@@ -63,80 +85,8 @@ const Ourbrands = () => {
               </div>
             </Animated>
           </div>
-          <div className="row pt-8 flex-md-row-reverse">
-            <Animated
-              animationOut="fadeInRight"
-              animationIn="fadeInRight"
-              isVisible={true}
-              className="col-lg-6 text-center brand-bg mb-5">
-              <img
-                className="w-100"
-                src="images/brands/brand-img01.jpg"
-                alt="brand"
-              />
-            </Animated>
-            <Animated
-              animationOut="fadeInLeft"
-              animationIn="fadeInLeft"
-              isVisible={true}
-              className="col-lg-6">
-              <div className="pr-sm-10 d-flex flex-column justify-content-center align-i-center h-100 text-lg-right">
-                <div className="brand-logo">
-                  <img src="images/brands/brand-1.jpg" alt="" />
-                </div>
-                <h2 className="fs-34 mb-0">KANYADAN</h2>
-                <h3 className="fs-24 mb-3">PURE WEDDING COLLECTION</h3>
-                <p className="mb-7 font-weight-500">
-                  A bespoke collection to shine like no other on your special
-                  day
-                </p>
-                <div>
-                  <Link
-                    to="#"
-                    className="btn btn-outline-primary text-uppercase letter-spacing-05">
-                    EXPLORE THE COLLECTION
-                  </Link>
-                </div>
-              </div>
-            </Animated>
-          </div>
-          <div className="row pt-8">
-            <Animated
-              animationOut="fadeInLeft"
-              animationIn="fadeInLeft"
-              isVisible={true}
-              className="col-lg-6 text-center brand-bg mb-5">
-              <img
-                className="w-100"
-                src="images/brands/brand-img.jpg"
-                alt="brand"
-              />
-            </Animated>
-            <Animated
-              animationOut="fadeInRight"
-              animationIn="fadeInRight"
-              isVisible={true}
-              className="col-lg-6">
-              <div className="pl-sm-10 pl-sm-0 d-flex flex-column justify-content-center align-i-center h-100">
-                <div className="brand-logo">
-                  <img src="images/brands/brand-1.jpg" alt="" />
-                </div>
-                <h2 className="fs-34 mb-0">KANYADAN</h2>
-                <h3 className="fs-24 mb-3">PURE WEDDING COLLECTION</h3>
-                <p className="mb-7 font-weight-500">
-                  A bespoke collection to shine like no other on your special
-                  day
-                </p>
-                <div>
-                  <Link
-                    to="#"
-                    className="btn btn-outline-primary text-uppercase letter-spacing-05">
-                    EXPLORE THE COLLECTION
-                  </Link>
-                </div>
-              </div>
-            </Animated>
-          </div>
+          ))}
+          
         </div>
       </section>
     </main>

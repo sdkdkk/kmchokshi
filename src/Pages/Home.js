@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { brandlogo } from "../Redux/GetbrandlogoSlice";
 import { collectionbanner } from "../Redux/GetcollectionbannerSlice";
 import { boximage } from "../Redux/GetboximageSlice";
+import { Getabout } from "../Redux/GetaboutSlice";
 
 const Home = () => {
   const homesliders = useSelector(
@@ -27,12 +28,17 @@ const Home = () => {
     (state) => state.getboximage.data?.document || []
   );
 
+  const Getabouts = useSelector((state) => state.Getabout.data?.document || []);
+
+  console.log(Getabouts);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(homeslider());
     dispatch(brandlogo());
     dispatch(collectionbanner());
     dispatch(boximage());
+    dispatch(Getabout());
   }, [dispatch]);
 
   useEffect(() => {}, []);
@@ -184,46 +190,55 @@ const Home = () => {
         <div className="container container-xxl">
           <h4 className="text-lg-center sub-title">story of</h4>
           <h1 className="text-lg-center mb-7 fs-30">K M CHOKSI JEWELLERS</h1>
-          <div className="row align-items-center ">
-            <Animated
-              animationOut="fadeInLeft"
-              animationIn="fadeInLeft"
-              isVisible={true}
-              className="col-md-6 mb-6 mb-md-0 pl-lg-17 pl-md-4">
-              <div className="mxw-405px pl-md-2">
-                <h2 className="fs-30 mb-5 lh-12">ABOUT US</h2>
-                <p className="mb-7 font-weight-500 text-justify">
-                  Building a legacy brand in the jewellery business is a
-                  lifelong pursuit. It requires a deeply conscious understanding
-                  of your customer and their needs; boundless creativity to
-                  craft ideas into tangible, joyful products and experiences;
-                  and a spirit of inclusion that inspires and empowers everyone
-                  along on the path. We now introduce you to our management
-                  board that leads k m choksi jewellers, with clarity of purpose
-                  and ambition to power ahead.
-                </p>
-                <Link
-                  to="/history"
-                  className="btn btn-outline-primary text-uppercase letter-spacing-05">
-                  About Us
-                </Link>
+
+          {Getabouts &&
+            Getabouts.map((data) => (
+              <div className="row align-items-center ">
+                <Animated
+                  animationOut="fadeInLeft"
+                  animationIn="fadeInLeft"
+                  isVisible={true}
+                  className="col-md-6 mb-6 mb-md-0 pl-lg-17 pl-md-4">
+                  <div className="mxw-405px pl-md-2">
+                    <h2 className="fs-30 mb-5 lh-12">{data.title}</h2>
+                    <p className="mb-7 font-weight-500 text-justify">
+                      {data.description}
+                    </p>
+                    <Link
+                      to="/history"
+                      className="btn btn-outline-primary text-uppercase letter-spacing-05">
+                      About Us
+                    </Link>
+                  </div>
+                </Animated>
+                <Animated
+                  animationOut="fadeInRight"
+                  animationIn="fadeInRight"
+                  isVisible={true}
+                  className="col-md-6 parralax-images">
+                  <div className="row">
+                    <div className="col-6 col-lg-6 pb-5">
+                      <img
+                        src={data.logo_image.replace(
+                          "http://localhost:5000",
+                          "https://kmchoksi.onrender.com"
+                        )}
+                        alt="collection 01"
+                      />
+                    </div>
+                    <div className="col-6 col-lg-6 pb-5">
+                      <img
+                        src={data.image.replace(
+                          "http://localhost:5000",
+                          "https://kmchoksi.onrender.com"
+                        )}
+                        alt="collection 01"
+                      />
+                    </div>
+                  </div>
+                </Animated>
               </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInRight"
-              animationIn="fadeInRight"
-              isVisible={true}
-              className="col-md-6 parralax-images">
-              <div className="row">
-                <div className="col-6 col-lg-6 pb-5">
-                  <img src="images/about/about01.jpg" alt="about" />
-                </div>
-                <div className="col-6 col-lg-6 pb-5">
-                  <img src="images/about/about02.jpg" alt="about" />
-                </div>
-              </div>
-            </Animated>
-          </div>
+            ))}
         </div>
       </section>
       <section className="pt-8 pb-10 border-bottom">

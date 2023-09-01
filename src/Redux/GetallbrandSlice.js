@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // import { logoutIfInvalidToken } from "../../helpers/handleError";
 
+
 const baseurl = process.env.REACT_APP_API_BASE_URL
 
 const initialState = {
@@ -13,12 +14,12 @@ const initialState = {
   errorMessage: "",
 };
 
-export const collectionbanner = createAsyncThunk(
-  "collectionbanner/collectionbannerList",
+export const Allbrand = createAsyncThunk(
+  "allbrand/allbrandList",
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `${baseurl}/collectionbannerall`
+        `${baseurl}/brandall`
       );
       return response.data;
     } catch (error) {
@@ -28,19 +29,19 @@ export const collectionbanner = createAsyncThunk(
   }
 );
 
-export const GetcollectionbannerSlice = createSlice({
-  name: "brandlogo",
+export const GetallbrandSlice = createSlice({
+  name: "allbrand",
   initialState,
   extraReducers: {
-    [collectionbanner.pending]: (state) => {
+    [Allbrand.pending]: (state) => {
       state.isLoading = true;
     },
-    [collectionbanner.fulfilled]: (state, { payload }) => {
+    [Allbrand.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = true;
       state.data = payload;
     },
-    [collectionbanner.rejected]: (state, { payload }) => {
+    [Allbrand.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = false;
       state.errorMessage = payload;
@@ -48,4 +49,4 @@ export const GetcollectionbannerSlice = createSlice({
   },
 });
 
-export default GetcollectionbannerSlice.reducer;
+export default GetallbrandSlice.reducer;

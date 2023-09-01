@@ -50,22 +50,30 @@ const Footer = () => {
             </h3>
             <ul className="followus-icon mb-0">
               <li>
-                <Link to="https://www.facebook.com/kmchoksi.jewellers/" target="_blank">
+                <Link
+                  to="https://www.facebook.com/kmchoksi.jewellers/"
+                  target="_blank">
                   <i className="fab fa-facebook" />
                 </Link>
               </li>
               <li>
-                <Link to="https://twitter.com/i/flow/login?redirect_after_login=%2Fkmchoksi" target="_blank">
+                <Link
+                  to="https://twitter.com/i/flow/login?redirect_after_login=%2Fkmchoksi"
+                  target="_blank">
                   <i className="fab fa-twitter" />
                 </Link>
               </li>
               <li>
-                <Link to="https://www.instagram.com/k_m_choksi_official/?hl=en" target="_blank" >
+                <Link
+                  to="https://www.instagram.com/k_m_choksi_official/?hl=en"
+                  target="_blank">
                   <i className="fab fa-instagram" />
                 </Link>
               </li>
               <li>
-                <Link to="https://www.youtube.com/watch?v=DuRbhBqnFmI" target="_blank">
+                <Link
+                  to="https://www.youtube.com/watch?v=DuRbhBqnFmI"
+                  target="_blank">
                   <i className="fab fa-youtube" />
                 </Link>
               </li>

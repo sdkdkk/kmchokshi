@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // import { logoutIfInvalidToken } from "../../helpers/handleError";
 
-// const url = process.env.REACT_APP_API_BASE_URL;
+const baseurl = process.env.REACT_APP_API_BASE_URL
 
 const initialState = {
   data: [],
@@ -18,7 +18,7 @@ export const brandlogo = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://kmchoksi.onrender.com/api/admin/brandlogoall`
+        `${baseurl}/brandlogoall`
       );
       return response.data;
     } catch (error) {

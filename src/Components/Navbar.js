@@ -1,7 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { cmslist } from "../Redux/GetcmsallSlice";
 
 const Navbar = () => {
+
+  const cmslists = useSelector(
+    (state) => state.Getcmsall.data?.document || []
+  );
+
+  console.log(cmslists)
+  
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(cmslist());
+  }, [dispatch]);
+
+
   const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState("");
 
@@ -186,7 +201,7 @@ const Navbar = () => {
                         </div>
                       </div>
                     </li>
-                    <li className="nav-item dropdown-item-contact dropdown py-2 py-xl-5 px-0 px-xl-4">
+                    {/* <li className="nav-item dropdown-item-contact dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link
                         className="nav-link dropdown-toggle p-0"
                         to="/diamond"
@@ -206,7 +221,7 @@ const Navbar = () => {
                           </Link>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link className="nav-link p-0" to="/storelocator">
                         Store Locator
@@ -389,7 +404,7 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item dropdown py-1 px-0">
+              {/* <li className="nav-item dropdown py-1 px-0">
                 <Link
                   className="nav-link dropdown-toggle p-0"
                   to="/diamond"
@@ -409,7 +424,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="nav-item py-1 px-0">
                 <Link className="nav-link  p-0" to="/storelocator">
                   Store Locator

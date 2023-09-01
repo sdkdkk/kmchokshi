@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Animated } from "react-animated-css";
+import { Getabout } from "../Redux/GetaboutSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const History = () => {
+  const dispatch = useDispatch();
+  const Getabouts = useSelector((state) => state.Getabout.data?.document || []);
+
+  useEffect(() => {
+    dispatch(Getabout());
+  }, [dispatch]);
+
+  console.log(Getabouts);
+
   return (
     <main id="content">
       <section className="inner-banner">
@@ -23,53 +34,55 @@ const History = () => {
           </div>
         </div>
       </section>
-      <section className="pt-5 pt-md-15 pb-md-15">
-        <div className="container container-xxl">
-          <div className="row align-items-center">
-            <Animated
-              animationOut="fadeInLeft"
-              animationIn="fadeInLeft"
-              isVisible={true}
-              className="col-6 col-md-3">
-              <img
-                className="w-100"
-                src="images/about/about01.jpg"
-                alt="about"
-              />
-            </Animated>
-            <Animated
-              animationOut="fadeInLeft"
-              animationIn="fadeInLeft"
-              isVisible={true}
-              className="col-6 col-md-3">
-              <img
-                className="w-100"
-                src="images/about/about02.jpg"
-                alt="about"
-              />
-            </Animated>
-            <Animated
-              animationOut="fadeInRight"
-              animationIn="fadeInRight"
-              isVisible={true}
-              className="col-md-6 mb-6">
-              <div className="p-8 bg-color-1 mt-6 mt-lg-0">
-                <h2 className="fs-30 mb-5 lh-12">ABOUT US</h2>
-                <p className="font-weight-500 text-justify">
-                  Building a legacy brand in the jewellery business is a
-                  lifelong pursuit. It requires a deeply conscious understanding
-                  of your customer and their needs; boundless creativity to
-                  craft ideas into tangible, joyful products and experiences;
-                  and a spirit of inclusion that inspires and empowers everyone
-                  along on the path. We now introduce you to our management
-                  board that leads k m choksi jewellers, with clarity of purpose
-                  and ambition to power ahead.
-                </p>
+
+      {Getabouts &&
+        Getabouts.map((data) => (
+          <section className="pt-5 pt-md-15 pb-md-15">
+            <div className="container container-xxl">
+              <div className="row align-items-center">
+                <Animated
+                  animationOut="fadeInLeft"
+                  animationIn="fadeInLeft"
+                  isVisible={true}
+                  className="col-6 col-md-3">
+                  <img
+                    src={data.logo_image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt="collection 01"
+                  />
+                </Animated>
+                <Animated
+                  animationOut="fadeInLeft"
+                  animationIn="fadeInLeft"
+                  isVisible={true}
+                  className="col-6 col-md-3">
+                  <img
+                    src={data.image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt="collection 01"
+                  />
+                </Animated>
+                <Animated
+                  animationOut="fadeInRight"
+                  animationIn="fadeInRight"
+                  isVisible={true}
+                  className="col-md-6 mb-6">
+                  <div className="p-8 bg-color-1 mt-6 mt-lg-0">
+                    <h2 className="fs-30 mb-5 lh-12">{data.title}</h2>
+                    <p className="font-weight-500 text-justify">
+                      {data.description}
+                    </p>
+                  </div>
+                </Animated>
               </div>
-            </Animated>
-          </div>
-        </div>
-      </section>
+            </div>
+          </section>
+        ))}
+
       <section className="pt-8 pb-12">
         <div className="container-fluid">
           <div className="row ">
