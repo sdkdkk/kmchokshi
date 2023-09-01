@@ -221,12 +221,13 @@ const Ourproducts = () => {
                 className="filter-btn"
                 onClick={toggleFilterContent}>
                 <i className="far fa-align-left" /> Filter
-              </button>
+              </button> 
+
+              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
             </div>
             <div
-              className={`canvas-sidebar filter-canvas ${
-                showFilterContent ? "show" : ""
-              }`}>
+              className={`canvas-sidebar filter-canvas ${showFilterContent ? "show" : ""
+                }`}>
               <form className="h-100">
                 <div className="card border-0 pt-5 pb-8 pb-sm-13 h-100">
                   <div className="px-6 pl-sm-8 text-right">
