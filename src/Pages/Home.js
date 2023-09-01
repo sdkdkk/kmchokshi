@@ -56,6 +56,14 @@ const Home = () => {
     autoplay: false,
     arrows: false,
   };
+
+  const settings2 = {
+    slidesToShow: 3,
+    infinite: true,
+    autoplay: false,
+    arrows: true,
+  };
+
   return (
     <main id="content">
       <section>
@@ -367,6 +375,233 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section className="pb-12 pb-lg-15 pt-2">
+        <div className="container">
+          <h2 className="fs-30 mb-8 text-center">HAPPY CLIENTS</h2>
+          <Slider {...settings2}>
+            <div className="box">
+              <div className="card border-0">
+                <div className="card-body px-3 py-0 text-center">
+                  <div className="mxw-84px mb-6 mx-auto">
+                    <img src="images/tes_01.png" alt="Sampson Totton" />
+                  </div>
+                  <ul className="list-inline mb-4">
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                  </ul>
+                  <p className="card-text mb-4 font-weight-500">
+                    “These are beautiful, well made &amp; comfortable! I bought
+                    them to wear to work &amp; casually. I wore them immediately
+                    walking in the city &amp; has no problem. “
+                  </p>
+                  <p className="card-text text-primary font-weight-bold mb-1 fs-15">
+                    Sampson Totton
+                  </p>
+                  <p className="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
+                    Surat, India
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="box">
+              <div className="card border-0">
+                <div className="card-body px-3 py-0 text-center">
+                  <div className="mxw-84px mb-6 mx-auto">
+                    <img src="images/tes_01.png" alt="Alfie Wood" />
+                  </div>
+                  <ul className="list-inline mb-4">
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                  </ul>
+                  <p className="card-text mb-4 font-weight-500">
+                    “ Clothers are addicting! Love this brand and shoe. The arch
+                    support is wonderful and helps for long hours on your body.
+                    The narrow heel is wonderfully ! “
+                  </p>
+                  <p className="card-text text-primary font-weight-bold mb-1 fs-15">
+                    Alfie Wood
+                  </p>
+                  <p className="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
+                    Surat, India
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="box">
+              <div className="card border-0">
+                <div className="card-body px-3 py-0 text-center">
+                  <div className="mxw-84px mb-6 mx-auto">
+                    <img src="images/tes_01.png" alt="Herse Hedman" />
+                  </div>
+                  <ul className="list-inline mb-4">
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                  </ul>
+                  <p className="card-text mb-4 font-weight-500">
+                    “Super class, cute, comfortable. You can wear them with just
+                    about anything.I will never sacrifice for style.”“
+                  </p>
+                  <p className="card-text text-primary font-weight-bold mb-1 fs-15">
+                    Herse Hedman
+                  </p>
+                  <p className="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
+                    Surat, India
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="box">
+              <div className="card border-0">
+                <div className="card-body px-3 py-0 text-center">
+                  <div className="mxw-84px mb-6 mx-auto">
+                    <img src="images/tes_01.png" alt="Herse Hedman" />
+                  </div>
+                  <ul className="list-inline mb-4">
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                  </ul>
+                  <p className="card-text mb-4 font-weight-500">
+                    “Super class, cute, comfortable. You can wear them with just
+                    about anything.I will never sacrifice for style.”“
+                  </p>
+                  <p className="card-text text-primary font-weight-bold mb-1 fs-15">
+                    Herse Hedman
+                  </p>
+                  <p className="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
+                    Surat, India
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="box">
+              <div className="card border-0">
+                <div className="card-body px-3 py-0 text-center">
+                  <div className="mxw-84px mb-6 mx-auto">
+                    <img src="images/tes_01.png" alt="Herse Hedman" />
+                  </div>
+                  <ul className="list-inline mb-4">
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                  </ul>
+                  <p className="card-text mb-4 font-weight-500">
+                    “Super class, cute, comfortable. You can wear them with just
+                    about anything.I will never sacrifice for style.”“
+                  </p>
+                  <p className="card-text text-primary font-weight-bold mb-1 fs-15">
+                    Herse Hedman
+                  </p>
+                  <p className="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
+                    Surat, India
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="box">
+              <div className="card border-0">
+                <div className="card-body px-3 py-0 text-center">
+                  <div className="mxw-84px mb-6 mx-auto">
+                    <img src="images/tes_01.png" alt="Herse Hedman" />
+                  </div>
+                  <ul className="list-inline mb-4">
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                    <li className="list-inline-item fs-14 text-primary mr-0">
+                      <i className="fas fa-star" />
+                    </li>
+                  </ul>
+                  <p className="card-text mb-4 font-weight-500">
+                    “Super class, cute, comfortable. You can wear them with just
+                    about anything.I will never sacrifice for style.”“
+                  </p>
+                  <p className="card-text text-primary font-weight-bold mb-1 fs-15">
+                    Herse Hedman
+                  </p>
+                  <p className="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
+                    Surat, India
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Slider>
+        </div>
+      </section>
+
       <section className="py-10 instagram-bg">
         <div className="container container-xxl">
           <h4 className="fs-18 text-center">Follow us on Instagram</h4>

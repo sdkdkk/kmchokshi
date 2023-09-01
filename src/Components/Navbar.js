@@ -133,7 +133,7 @@ const Navbar = () => {
                                 <div className="dropdown-item" key={index}>
                                   <Link
                                     className="dropdown-link"
-                                    to="/ourproducts/">
+                                    to="/ourproducts">
                                     {item.name}
                                   </Link>
                                 </div>

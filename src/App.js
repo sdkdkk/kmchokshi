@@ -10,6 +10,8 @@ import Storelocator from "./Pages/Storelocator";
 import Bookappointment from "./Pages/Bookappointment";
 import Productdetails from "./Pages/Productdetails";
 import ScrollToTop from "./Components/Scroll";
+import Newsevent from "./Pages/Newsevent";
+import Newseventdetails from "./Pages/Newseventdetails";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route exact path="/storelocator" element={<Storelocator />} />
           <Route exact path="/bookappointment" element={<Bookappointment />} />
           <Route exact path="/productdetails" element={<Productdetails />} />
+          <Route exact path="/newsevent" element={<Newsevent />} />
+          <Route exact path="/newseventdetails" element={<Newseventdetails />} />
         </Routes>
         <ScrollToTop />
         <Footer />
