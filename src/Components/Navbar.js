@@ -14,7 +14,7 @@ const Navbar = () => {
     (state) => state.Getcategory.data?.document || []
   );
 
-
+  console.log(getcategories);
   
 
   console.log(getcategories[0]?.name);
@@ -113,114 +113,41 @@ const Navbar = () => {
                         <div className="container container-xxl">
                           <div className="row no-gutters w-100">
                             <div className="col-2">
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {getcategories[0]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Ring */}
-                                  {getcategories[1]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Mangalsutra */}
-                                  {getcategories[2]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Braceletes */}
-                                  {getcategories[3]?.name}
-                                </Link>
-                              </div>
+                              {getcategories.slice(0, 4).map((item, index) => (
+                                <div className="dropdown-item" key={index}>
+                                  <Link className="dropdown-link" to="/ourproducts">
+                                    {item.name}
+                                  </Link>
+                                </div>
+                              ))}
                             </div>
                             <div className="col-2">
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Kadas */}
-                                  {getcategories[4]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Bangles */}
-                                  {getcategories[5]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Chain */}
-                                  {getcategories[6]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Pendant */}
-                                  {getcategories[7]?.name}
-                                </Link>
-                              </div>
+                              {getcategories.slice(4, 8).map((item, index) => (
+                                <div className="dropdown-item" key={index}>
+                                  <Link className="dropdown-link" to="/ourproducts">
+                                    {item.name}
+                                  </Link>
+                                </div>
+                              ))}
                             </div>
                             <div className="col-2">
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Diamond */}
-                                  {getcategories[8]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Pendant Set */}
-                                  {getcategories[9]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Necklace */}
-                                  {getcategories[10]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Antique Jewellery */}
-                                  {getcategories[11]?.name}
-                                </Link>
-                              </div>
-                              <div className="dropdown-item">
-                                <Link
-                                  className="dropdown-link"
-                                  to="/ourproducts">
-                                  {/* Antique Jewellery */}
-                                  {getcategories[12]?.name}
-                                </Link>
-                              </div>
+                              {getcategories.slice(8, 12).map((item, index) => (
+                                <div className="dropdown-item" key={index}>
+                                  <Link className="dropdown-link" to="/ourproducts/">
+                                    {item.name}
+                                  </Link>
+                                </div>
+                              ))}
                             </div>
+                            {/* <div className="col-2">
+                              {getcategories.slice(12, 16).map((item, index) => (
+                                <div className="dropdown-item" key={index}>
+                                  <Link className="dropdown-link" to="/ourproducts">
+                                    {item.name}
+                                  </Link>
+                                </div>
+                              ))}
+                            </div> */}
                             <div className="col-6 h-100">
                               <div className="card border-0 mt-2">
                                 <img

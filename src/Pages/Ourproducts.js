@@ -1,40 +1,12 @@
 import { Link } from "react-router-dom";
 import { Animated } from "react-animated-css";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick";
 import Slider from "react-slick";
-import { useDispatch, useSelector } from "react-redux";
-import { getcategory } from "../Redux/GetcategorySlice";
 
 const Ourproducts = () => {
-  const [showFilterContent, setShowFilterContent] = useState(false);
-
-  const toggleFilterContent = () => {
-    setShowFilterContent(!showFilterContent);
-  };
-
-  const cmslists = useSelector(
-    (state) => state.Getcmsall.data?.document || []
-  );
-
-  const getcategories = useSelector(
-    (state) => state.Getcategory.data?.document || []
-  );
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getcategory());
-  }, [dispatch]);
-
-
-  
-
-  console.log(getcategories[0]?.name);
-
-
-
   const settings = {
     dots: true,
     infinite: true,
@@ -237,260 +209,15 @@ const Ourproducts = () => {
             <div className="col-lg-6">
               <h2 className="mb-5">Wedding Rings</h2>
             </div>
-            <div className="col-lg-6 text-right">
-              <button
-                type="button"
-                className="filter-btn"
-                onClick={toggleFilterContent}>
-                <i className="far fa-align-left" /> Filter
-              </button> 
-            </div>
             <div
-              className={`canvas-sidebar filter-canvas ${showFilterContent ? "show" : ""
-                }`}>
-              <form className="h-100">
-                <div className="card border-0 pt-5 pb-8 pb-sm-13 h-100">
-                  <div className="px-6 pl-sm-8 text-right">
-                    <span
-                      className="canvas-close d-inline-block text-right fs-24 mb-1 ml-auto lh-1 text-primary"
-                      onClick={toggleFilterContent}>
-                      <i className="fal fa-times" />
-                    </span>
-                  </div>
-                  <div className="card-header bg-transparent py-0 px-6 px-sm-8 border-bottom">
-                    <h3 className="fs-30 mb-5">Filter by</h3>
-                    <p className="fs-15 text-primary mb-3">25 Products</p>
-                  </div>
-                  <div className="card-body px-6 px-sm-8 pt-7 overflow-y-auto">
-                    <div className="card border-0 mb-7">
-                      <div className="card-header bg-transparent border-0 p-0">
-                        <h3 className="card-title fs-20 mb-0">Categories</h3>
-                      </div>
-                      <div className="card-body px-0 pt-4 pb-0">
-                        <ul className="list-unstyled mb-0">
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Earring */}
-                              {getcategories[0]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Ring */}
-                              {getcategories[1]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Mangalsutra */}
-                              {getcategories[2]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Braceletes */}
-                              {getcategories[3]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Kadas */}
-                              {getcategories[4]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Chain */}
-                              {getcategories[5]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Pendant */}
-                              {getcategories[6]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Diamond */}
-                              {getcategories[7]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Diamond */}
-                              {getcategories[8]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Diamond */}
-                              {getcategories[9]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Diamond */}
-                              {getcategories[10]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Diamond */}
-                              {getcategories[11]?.name}
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              {/* Diamond */}
-                              {getcategories[12]?.name}
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="card border-0 mb-7">
-                      <div className="card-header bg-transparent border-0 p-0">
-                        <h3 className="card-title fs-20 mb-0">Gender</h3>
-                      </div>
-                      <div className="card-body px-0 pt-4 pb-0">
-                        <ul className="list-unstyled mb-0">
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Men
-                            </Link>
-                          </li>
-                          <li className="mb-1">
-                            <Link
-                              to="#"
-                              className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                              Women
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="card border-0 mb-7 widget-color">
-                      <div className="card-header bg-transparent border-0 p-0">
-                        <h3 className="card-title fs-20 mb-0">Colors</h3>
-                      </div>
-                      <div className="card-body px-0 pt-4 pb-0">
-                        <ul className="list-inline mb-0">
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#d0a272" }}
-                            />
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#68412d" }}
-                            />
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#000000" }}
-                            />
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#aa5959" }}
-                            />
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#8db4d2" }}
-                            />
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#c2c3a0" }}
-                            />
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#c7857d" }}
-                            />
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#e3e1e7" }}
-                            />
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="d-block item"
-                              style={{ backgroundColor: "#b490b0" }}
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card-footer border-0 bg-transparent pt-5 px-8">
-                    <div className="row no-gutter mx-n2">
-                      <div className="col-sm-6 px-2 mb-2 mb-sm-0">
-                        <Link
-                          to="#"
-                          className="btn btn-primary btn-block letter-spacing-05 text-uppercase">
-                          apply
-                        </Link>
-                      </div>
-                      <div className="col-sm-6 px-2">
-                        <Link
-                          to="#"
-                          className="btn btn-outline-primary btn-block letter-spacing-05 text-uppercase">
-                          clear
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
+              className="col-lg-6 text-right"
+              data-canvas="true"
+              data-canvas-options='{"container":".filter-canvas"}'>
+              {/* <button type="button" className="filter-btn">
+                <i className="far fa-align-left" /> Filter
+              </button> */}
+
+              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
             </div>
           </div>
           <div className="row mb-4 overflow-hidden">
@@ -1119,7 +846,7 @@ const Ourproducts = () => {
               </div>
             </Animated>
           </div>
-          {/* <div className="canvas-sidebar filter-canvas">
+          <div className="canvas-sidebar filter-canvas">
             <div className="canvas-overlay"></div>
             <form className="h-100">
               <div className="card border-0 pt-5 pb-8 pb-sm-13 h-100">
@@ -1314,7 +1041,7 @@ const Ourproducts = () => {
                 </div>
               </div>
             </form>
-          </div> */}
+          </div>
         </div>
       </section>
     </main>
