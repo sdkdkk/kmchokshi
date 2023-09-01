@@ -213,9 +213,11 @@ const Ourproducts = () => {
               className="col-lg-6 text-right"
               data-canvas="true"
               data-canvas-options='{"container":".filter-canvas"}'>
-              <button type="button" className="filter-btn">
+              {/* <button type="button" className="filter-btn">
                 <i className="far fa-align-left" /> Filter
-              </button>
+              </button> */}
+
+              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
             </div>
           </div>
           <div className="row mb-4 overflow-hidden">
