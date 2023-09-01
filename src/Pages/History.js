@@ -55,7 +55,7 @@ const History = () => {
               className="col-md-6 mb-6">
               <div className="p-8 bg-color-1 mt-6 mt-lg-0">
                 <h2 className="fs-30 mb-5 lh-12">ABOUT US</h2>
-                <p className="font-weight-500">
+                <p className="font-weight-500 text-justify">
                   Building a legacy brand in the jewellery business is a
                   lifelong pursuit. It requires a deeply conscious understanding
                   of your customer and their needs; boundless creativity to
@@ -91,7 +91,7 @@ const History = () => {
               className="col-lg-6">
               <div className="pl-lg-10 pr-lg-15 d-flex flex-column justify-content-center h-100">
                 <h2 className="fs-34 mb-2 mt-5">Ashvinkumar Kesharimal Shah</h2>
-                <p className="mb-7 font-weight-500">
+                <p className="mb-7 font-weight-500 text-justify">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry’s
                   standard dummy text ever since the 1500s, when an unknown
@@ -126,7 +126,7 @@ const History = () => {
               className="col-lg-6">
               <div className="pl-lg-15 pr-lg-10 d-flex flex-column justify-content-center h-100 text-lg-right">
                 <h2 className="fs-34 mb-2 mt-5">Sheelaben Ashwinkumar Shah</h2>
-                <p className="mb-7 font-weight-500">
+                <p className="mb-7 font-weight-500 text-justify">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry’s
                   standard dummy text ever since the 1500s, when an unknown

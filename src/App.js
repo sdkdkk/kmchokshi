@@ -9,6 +9,7 @@ import Diamond from "./Pages/Diamond";
 import Storelocator from "./Pages/Storelocator";
 import Bookappointment from "./Pages/Bookappointment";
 import Productdetails from "./Pages/Productdetails";
+import ScrollToTop from "./Components/Scroll";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/bookappointment" element={<Bookappointment />} />
           <Route exact path="/productdetails" element={<Productdetails />} />
         </Routes>
+        <ScrollToTop />
         <Footer />
       </Router>
     </div>
