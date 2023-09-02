@@ -268,7 +268,6 @@ const Ourproducts = () => {
                                 <Link
                                   to="#"
                                   className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                                  {/* Earring */}
                                   {data.name}
                                 </Link>
                               </li>

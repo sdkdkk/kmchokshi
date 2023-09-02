@@ -1,12 +1,34 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick";
 import Slider from "react-slick";
 import { useForm } from "react-hook-form";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Productdetails = () => {
+
+  // Get all image links
+const imageLinks = document.querySelectorAll('.list-group-item');
+
+// Add a click event listener to each link
+imageLinks.forEach(link => {
+  link.addEventListener('click', function (event) {
+    // Prevent the default link behavior (scrolling to an anchor)
+    event.preventDefault();
+
+    // Remove the "active" class from all links
+    imageLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+
+    // Add the "active" class to the clicked link
+    this.classList.add('active');
+  });
+});
+
+
   const {
     register,
     handleSubmit,
@@ -49,44 +71,56 @@ const Productdetails = () => {
                   id="list-dots"
                   className="list-group product-image-dots dots-thumbs mr-2">
                   <Link
-                    className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 active"
-                    to="#gallery-1">
-                    <img src="images/product-page-17-sm.jpg" alt="Thumb 1" />
+                    className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0"
+                    to="#gallery-1"
+                    id="gallery-1" 
+                    spy={true}
+                    smooth={true}
+                    duration={500}>
+                    <img src="images/product-page-17-sm.jpg" alt="" />
                   </Link>
                   <Link
                     className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
-                    to="#gallery-2">
-                    <img src="images/product-page-18-sm.jpg" alt="Thumb 2" />
+                    to="#gallery-2"
+                    id="gallery-2"
+                    spy={true}
+                    smooth={true}
+                    duration={500}>
+                    <img src="images/product-page-18-sm.jpg" alt="" />
                   </Link>
                   <Link
                     className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
-                    to="#gallery-3">
-                    <img src="images/product-page-17-sm.jpg" alt="Thumb 3" />
+                    to="#gallery-3"
+                    id="gallery-3"
+                    spy={true}
+                    smooth={true}
+                    duration={500}>
+                    <img src="images/product-page-17-sm.jpg" alt="" />
                   </Link>
                 </div>
                 <div className="scrollspy-images ml-md-12">
                   <Link
                     to="images/product-page-17.jpg"
                     data-gtf-mfp="true"
-                    //   data-gallery-id={01}
+                    // data-gallery-id={01}
                     className="d-block mb-2"
-                    id="gallery-1">
+                    id="#gallery-1">
                     <img src="images/product-page-17.jpg" alt="" />
                   </Link>
                   <Link
                     to="images/product-page-18.jpg"
                     data-gtf-mfp="true"
-                    //   data-gallery-id={01}
+                    // data-gallery-id={01}
                     className="d-block mb-2"
-                    id="gallery-2">
+                    id="#gallery-2">
                     <img src="images/product-page-18.jpg" alt="" />
                   </Link>
                   <Link
                     to="images/product-page-17.jpg"
                     data-gtf-mfp="true"
-                    //   data-gallery-id={01}
+                    // data-gallery-id={01}
                     className="d-block mb-2"
-                    id="gallery-3">
+                    id="#gallery-3">
                     <img src="images/product-page-17.jpg" alt="" />
                   </Link>
                 </div>
@@ -249,10 +283,7 @@ const Productdetails = () => {
       <section className="pb-11 pb-lg-15">
         <div className="container container-xxl">
           <h2 className="fs-28 mb-5 text-center">May You Like This</h2>
-          <Slider
-            {...settings}
-            className="slick-slider"
-            data-slick-options='{"slidesToShow": 4, "autoplay":true,"dots":true,"arrows":false,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 576,"settings": {"slidesToShow": 1}}]}'>
+          <Slider {...settings} className="slick-slider">
             <div className="box">
               <div className="card border-0 hover-change-content product">
                 <div className="card-img-top position-relative">
