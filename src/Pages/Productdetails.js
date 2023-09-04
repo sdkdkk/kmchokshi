@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick";
@@ -58,6 +58,11 @@ imageLinks.forEach(link => {
         },
       },
     ],
+  }; const [selectedImage, setSelectedImage] = useState('images/product-page-17.jpg'); // Set an initial image
+
+  // Function to handle image selection when a small image is clicked
+  const handleImageClick = (newImage) => {
+    setSelectedImage(newImage);
   };
 
   return (
@@ -67,13 +72,50 @@ imageLinks.forEach(link => {
           <div className="row no-gutters">
             <div className="col-md-7 mb-8 mb-md-0 position-relative pr-md-6 pr-lg-10">
               <div className="d-flex">
-                <div
+                <div className="d-flex">
+                  <div id="list-dots" className="list-group product-image-dots dots-thumbs mr-2">
+                    <Link
+                      className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0"
+                      to="#gallery-1"
+                      onClick={() => handleImageClick('images/product-page-17.jpg')} // Set the image URL for gallery-1
+                    >
+                      <img src="images/product-page-17-sm.jpg" alt="" />
+                    </Link>
+                    <Link
+                      className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
+                      to="#gallery-2"
+                      onClick={() => handleImageClick('images/product-page-18.jpg')} // Set the image URL for gallery-2
+                    >
+                      <img src="images/product-page-18-sm.jpg" alt="" />
+                    </Link>
+                    <Link
+                      className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
+                      to="#gallery-3"
+                      onClick={() => handleImageClick('images/product-page-17.jpg')} // Set the image URL for gallery-3
+                    >
+                      <img src="images/product-page-17-sm.jpg" alt="" />
+                    </Link>
+                  </div>
+
+                  <div className="scrollspy-images ml-md-12">
+                    {/* <img src={selectedImage} alt="" /> */}
+                    <Link
+                      to={"images/product-page-17.jpg"}
+                      data-gtf-mfp="true"
+                      // data-gallery-id={01}
+                      className="d-block mb-2"
+                      id="#gallery-1">
+                      <img src={selectedImage} alt="" />
+                    </Link>
+                  </div>
+
+                  {/* <div
                   id="list-dots"
                   className="list-group product-image-dots dots-thumbs mr-2">
                   <Link
                     className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0"
                     to="#gallery-1"
-                    id="gallery-1" 
+                    id="gallery-1"
                     spy={true}
                     smooth={true}
                     duration={500}>
@@ -97,8 +139,8 @@ imageLinks.forEach(link => {
                     duration={500}>
                     <img src="images/product-page-17-sm.jpg" alt="" />
                   </Link>
-                </div>
-                <div className="scrollspy-images ml-md-12">
+                </div> */}
+                  {/* <div className="scrollspy-images ml-md-12">
                   <Link
                     to="images/product-page-17.jpg"
                     data-gtf-mfp="true"
@@ -110,7 +152,7 @@ imageLinks.forEach(link => {
                   <Link
                     to="images/product-page-18.jpg"
                     data-gtf-mfp="true"
-                    // data-gallery-id={01}
+                    // data-gallery-id={02}
                     className="d-block mb-2"
                     id="#gallery-2">
                     <img src="images/product-page-18.jpg" alt="" />
@@ -118,11 +160,12 @@ imageLinks.forEach(link => {
                   <Link
                     to="images/product-page-17.jpg"
                     data-gtf-mfp="true"
-                    // data-gallery-id={01}
+                      data-gallery-id="3"
                     className="d-block mb-2"
                     id="#gallery-3">
                     <img src="images/product-page-17.jpg" alt="" />
                   </Link>
+                </div> */}
                 </div>
               </div>
             </div>

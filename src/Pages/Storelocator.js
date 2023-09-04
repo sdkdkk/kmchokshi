@@ -45,10 +45,10 @@ const Storelocator = () => {
         </div>
       </section>
       <section className="pt-lg-10 pt-5 pb-10">
-        <div className="container">
+        <div className="container ">
           {branchmasters &&
             branchmasters.map((data) => (
-              <div className="row mt-4">
+              <div className="row mt-4 mb-6">
                 <div className="col-lg-4 mb-6 d-flex align-items-center">
                   <div className="text-left px-5">
                     <h4 className="font-weight-bold mb-2">{data.city}</h4>
