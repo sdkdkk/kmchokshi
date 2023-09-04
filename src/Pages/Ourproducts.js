@@ -61,7 +61,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img src="images/collection/01.jpg" alt="collection 01" />
                   <h4>Gold Coins</h4>
                 </Link>
@@ -72,7 +72,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/02.jpg"
                     alt="collection Logo 02"
@@ -86,7 +86,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/03.jpg"
                     alt="collection Logo 03"
@@ -100,7 +100,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/04.jpg"
                     alt="collection Logo 04"
@@ -114,7 +114,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/05.jpg"
                     alt="collection Logo 05"
@@ -128,7 +128,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/06.jpg"
                     alt="collection Logo 06"
@@ -142,7 +142,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/07.jpg"
                     alt="collection Logo 07"
@@ -156,7 +156,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/08.jpg"
                     alt="collection Logo 08"
@@ -170,7 +170,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/09.jpg"
                     alt="collection Logo 09"
@@ -184,7 +184,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/10.jpg"
                     alt="collection Logo 10"
@@ -198,7 +198,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/11.jpg"
                     alt="collection Logo 11"
@@ -212,7 +212,7 @@ const Ourproducts = () => {
               animationIn="fadeInUp"
               isVisible={true}>
               <div className="inner-box-collection">
-                <Link to="/productdetails" className="d-block item">
+                <Link to="/ourproducts" className="d-block item">
                   <img
                     src="images/collection/12.jpg"
                     alt="collection Logo 12"
@@ -266,7 +266,7 @@ const Ourproducts = () => {
                             getcategories.map((data) => (
                               <li className="mb-1">
                                 <Link
-                                  to="#"
+                                  to="/ourproducts"
                                   className="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
                                   {data.name}
                                 </Link>
@@ -401,9 +401,9 @@ const Ourproducts = () => {
               isVisible={true}>
               <div className="card border-0 hover-change-content product">
                 <div className="card-img-top position-relative">
-                  <div
+                  <Link to="/productdetails"> <div
                     style={{ backgroundImage: 'url("images/product-19.jpg")' }}
-                    className="card-img ratio bg-img-cover-center ratio-1-1"></div>
+                    className="card-img ratio bg-img-cover-center ratio-1-1"></div></Link>
                   <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                     <Link
                       to="#"
