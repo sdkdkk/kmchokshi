@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // import { logoutIfInvalidToken } from "../../helpers/handleError";
 
-const baseurl = process.env.REACT_APP_API_BASE_URL;
+const baseurl = process.env.REACT_APP_API_BASE_URL
 
 const initialState = {
   data: [],
@@ -13,12 +13,12 @@ const initialState = {
   errorMessage: "",
 };
 
-export const getcategory = createAsyncThunk(
-  "getcategories/getcategoriesList",
+export const testimonialmaster = createAsyncThunk(
+  "testimonial/testimonialList",
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://kmchoksi.onrender.com/api/categoryall`
+        `${baseurl}/testimonialall`
       );
       return response.data;
     } catch (error) {
@@ -28,19 +28,19 @@ export const getcategory = createAsyncThunk(
   }
 );
 
-export const GetcategorySlice = createSlice({
-  name: "category",
+export const GettestimonialSlice = createSlice({
+  name: "restimonial",
   initialState,
   extraReducers: {
-    [getcategory.pending]: (state) => {
+    [testimonialmaster.pending]: (state) => {
       state.isLoading = true;
     },
-    [getcategory.fulfilled]: (state, { payload }) => {
+    [testimonialmaster.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = true;
       state.data = payload;
     },
-    [getcategory.rejected]: (state, { payload }) => {
+    [testimonialmaster.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = false;
       state.errorMessage = payload;
@@ -48,4 +48,4 @@ export const GetcategorySlice = createSlice({
   },
 });
 
-export default GetcategorySlice.reducer;
+export default GettestimonialSlice.reducer;

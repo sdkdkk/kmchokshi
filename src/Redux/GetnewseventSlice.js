@@ -2,9 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 
-// import { logoutIfInvalidToken } from "../../helpers/handleError";
-
-const baseurl = process.env.REACT_APP_API_BASE_URL;
+const baseurl = process.env.REACT_APP_API_BASE_URL
 
 const initialState = {
   data: [],
@@ -13,12 +11,12 @@ const initialState = {
   errorMessage: "",
 };
 
-export const getcategory = createAsyncThunk(
-  "getcategories/getcategoriesList",
+export const newsevent = createAsyncThunk(
+  "newsevent/newseventList",
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://kmchoksi.onrender.com/api/categoryall`
+        `${baseurl}/eventall`
       );
       return response.data;
     } catch (error) {
@@ -28,19 +26,19 @@ export const getcategory = createAsyncThunk(
   }
 );
 
-export const GetcategorySlice = createSlice({
-  name: "category",
+export const GetnewseventSlice = createSlice({
+  name: "homeslider",
   initialState,
   extraReducers: {
-    [getcategory.pending]: (state) => {
+    [newsevent.pending]: (state) => {
       state.isLoading = true;
     },
-    [getcategory.fulfilled]: (state, { payload }) => {
+    [newsevent.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = true;
       state.data = payload;
     },
-    [getcategory.rejected]: (state, { payload }) => {
+    [newsevent.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = false;
       state.errorMessage = payload;
@@ -48,4 +46,4 @@ export const GetcategorySlice = createSlice({
   },
 });
 
-export default GetcategorySlice.reducer;
+export default GetnewseventSlice.reducer;
