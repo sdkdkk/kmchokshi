@@ -238,12 +238,21 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
+                      <Link className="nav-link p-0" to="/newsevent">
+                        News Event
+                        {/* {cmslists[7]?.title} */}
+                        <span className="caret" />
+                      </Link>
+                    </li>
+                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link className="nav-link p-0" to="/storelocator">
                         {/* Store Locator */}
                         {cmslists[5]?.title}
                         <span className="caret" />
                       </Link>
                     </li>
+
+                  
                     <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
                       <Link className="nav-link p-0" to="/storelocator">
                         {/* Store Locator */}
@@ -258,6 +267,7 @@ const Navbar = () => {
                         <span className="caret" />
                       </Link>
                     </li>
+                   
                   </ul>
                 </div>
                 <div className="col-xl-4 position-relative">

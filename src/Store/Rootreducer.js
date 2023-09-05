@@ -8,6 +8,8 @@ import GetaboutReducer from "../Redux/GetaboutSlice";
 import GetallbrandReducer from "../Redux/GetallbrandSlice";
 import GetcmsallReducer from "../Redux/GetcmsallSlice";
 import GetcategoryReducer from "../Redux/GetcategorySlice";
+import GettestimonialReducer from "../Redux/GettestimonialSlice";
+import GetnewseventReducer from "../Redux/GetnewseventSlice";
 
 const reducer = combineReducers({
   GethomeSlider: GethomeSliderReducer,
@@ -18,7 +20,9 @@ const reducer = combineReducers({
   Getabout: GetaboutReducer,
   Getallbrand: GetallbrandReducer,
   Getcmsall: GetcmsallReducer,
-  Getcategory:GetcategoryReducer
+  Getcategory: GetcategoryReducer,
+  Gettestimonial: GettestimonialReducer,
+  Getnewsevent:GetnewseventReducer
 });
 
 export default reducer;
