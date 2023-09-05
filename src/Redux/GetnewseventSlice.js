@@ -20,7 +20,7 @@ export const newsevent = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      // logoutIfInvalidToken(error.response)
+
       return rejectWithValue(error.message);
     }
   }

@@ -3,24 +3,39 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { cmslist } from "../Redux/GetcmsallSlice";
 import { getcategory } from "../Redux/GetcategorySlice";
+import { Allbrand } from "../Redux/GetallbrandSlice";
+import { brandlogo } from "../Redux/GetbrandlogoSlice";
+
+
 
 const Navbar = () => {
-  const cmslists = useSelector((state) => state.Getcmsall.data?.document || []);
 
+  const dispatch = useDispatch();
+  const cmslists = useSelector((state) => state.Getcmsall.data?.document || []);
+  const brand = useSelector(
+    (state) => state.Getallbrand.data?.document || []
+  );
+
+  console.log(brand);
   const getcategories = useSelector(
     (state) => state.Getcategory.data?.document || []
   );
 
-  console.log(getcategories);
+  const brandlogos = useSelector(
+    (state) => state.getbrandlogo.data?.document || []
+  );
 
-  console.log(getcategories[0]?.name);
+  console.log(brandlogos);
+  useEffect(() => {
+    dispatch(brandlogo());
+  }, [dispatch]);
 
-  console.log(cmslists[0]?.title);
 
-  const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(cmslist());
     dispatch(getcategory());
+    dispatch(Allbrand())
   }, [dispatch]);
 
   const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
@@ -37,7 +52,7 @@ const Navbar = () => {
   const handleSearchClick = () => {
     setSearchPopupVisible((prevVisible) => !prevVisible);
   };
-
+  const [hoveredCategory, setHoveredCategory] = useState(null);
   return (
     <>
       <header className="main-header navbar-light header-sticky header-sticky-smart">
@@ -72,7 +87,17 @@ const Navbar = () => {
                         <span className="caret" />
                       </Link>
                       <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
-                        <li className="dropdown-item dropdown dropright">
+                        {brand.map((item, i) => {
+                          console.log(item);
+                          return (
+                            <li key={i} className="dropdown-item dropdown dropright">
+                              <Link className="dropdown-link" to="/ourbrands">
+                                {item.name}
+                              </Link>
+                            </li>
+                          )
+                        })}
+                        {/* <li className="dropdown-item dropdown dropright">
                           <Link className="dropdown-link" to="/ourbrands">
                             Kanyadan - Wedding Collection
                           </Link>
@@ -91,7 +116,7 @@ const Navbar = () => {
                           <Link className="dropdown-link" to="/ourbrands">
                             Kanyadan - Wedding Collection
                           </Link>
-                        </li>
+                        </li> */}
                       </ul>
                     </li>
                     <li className="nav-item dropdown-item-shop dropdown py-2 py-xl-5 px-0 px-xl-4">
@@ -107,31 +132,13 @@ const Navbar = () => {
                         <div className="container container-xxl">
                           <div className="row no-gutters w-100">
                             <div className="col-2">
-                              {/* {Array.from({ length: Math.ceil(getcategories.length / 4) }).map((_, index) => (
-                                <div className="col-2" key={index}>
-                                  {getcategories.slice(index * 4, index * 4 + 4).map((item, subIndex) => (
-                                    <div className="dropdown-item" key={subIndex}>
-                                      <Link className="dropdown-link" to="/ourproducts">
-                                        {item.name}
-                                      </Link>
-                                    </div>
-                                  ))}
-                                </div>
-                              ))} */}
-
-                              {/* {getcategories.slice(0, 4).map((item, index) => (
-                                <div className="dropdown-item" key={index}>
-                                  <Link
-                                    className="dropdown-link"
-                                    to="/ourproducts">
-                                    {item.name}
-                                  </Link>
-                                </div>
-                              ))} */}
-                            </div>
-                            <div className="col-2">
-                              {getcategories.slice(4, 8).map((item, index) => (
-                                <div className="dropdown-item" key={index}>
+                              {getcategories.slice(0, 4).map((item, i) => (
+                                <div
+                                  className="dropdown-item"
+                                  key={i}
+                                  onMouseEnter={() => setHoveredCategory(i)}
+                                  onMouseLeave={() => setHoveredCategory(null)}
+                                >
                                   <Link
                                     className="dropdown-link"
                                     to="/ourproducts">
@@ -141,8 +148,13 @@ const Navbar = () => {
                               ))}
                             </div>
                             <div className="col-2">
-                              {getcategories.slice(8, 12).map((item, index) => (
-                                <div className="dropdown-item" key={index}>
+                              {getcategories.slice(4, 8).map((item, i) => (
+                                <div
+                                  className="dropdown-item"
+                                  key={i}
+                                  onMouseEnter={() => setHoveredCategory(i)}
+                                  onMouseLeave={() => setHoveredCategory(null)}
+                                >
                                   <Link
                                     className="dropdown-link"
                                     to="/ourproducts">
@@ -151,123 +163,65 @@ const Navbar = () => {
                                 </div>
                               ))}
                             </div>
-                            {/* <div className="col-2">
-                              {getcategories.slice(12, 16).map((item, index) => (
-                                <div className="dropdown-item" key={index}>
-                                  <Link className="dropdown-link" to="/ourproducts">
+
+                            <div className="col-2">
+                              {getcategories.slice(8, 12).map((item, i) => (
+                                <div
+                                  className="dropdown-item"
+                                  key={i}
+                                  onMouseEnter={() => setHoveredCategory(i)}
+                                  onMouseLeave={() => setHoveredCategory(null)}
+                                >
+                                  <Link
+                                    className="dropdown-link"
+                                    to="/ourproducts">
                                     {item.name}
                                   </Link>
                                 </div>
                               ))}
-                            </div> */}
-                            {getcategories.slice(8, 12).map((item, id) => {
-                              console.log(item.banner_image);
-                              return (
-                                <div className="dropdown-item" key={id}>
-                                  <Link
-                                    className="dropdown-link"
-                                    to="/ourproducts"
-                                  >
-                                    {item.name}
-                                    <div className="category-image">
-                                      {item.banner_image.replace(
-                                        "http://localhost:5000",
-                                        "https://kmchoksi.onrender.com"
-                                      )}
-                                      {console.log(item.banner_image.replace(
-                                        "http://localhost:5000",
-                                        "https://kmchoksi.onrender.com"
-                                      ))}
-                                      <img
-                                        src={item.banner_image.replace(
-                                          "http://localhost:5000",
-                                          "https://kmchoksi.onrender.com"
-                                        )}
-                                        width={100}
+                            </div>                           
 
-                                        // src={`https://kmchoksi.onrender.com/${item.banner_image}`}
-                                        // src={item.banner_image}
-                                        alt=""
-                                        className="category-img"
-                                      />
-                                    </div>
-                                  </Link>
-                                </div>
-                              )
-                            }
-                            )}
-                            {/* <div className="col-6 h-100">
+                            <div className="col-6 h-100">
                               <div className="card border-0 mt-2">
-                                <img
-                                  src="images/menu.jpg"
-                                  alt=""
-                                  className="card-img"
-                                />
+                                {hoveredCategory !== null && (
+                                  <img
+                                    src={getcategories[hoveredCategory].banner_image.replace(
+                                      "http://localhost:5000",
+                                      "https://kmchoksi.onrender.com"
+                                    )}
+                                    alt=""
+                                    className="card-img"
+                                  />
+                                )}
                               </div>
-                            </div> */}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </li>
-                    {/* <li className="nav-item dropdown-item-contact dropdown py-2 py-xl-5 px-0 px-xl-4">
-                      <Link
-                        className="nav-link dropdown-toggle p-0"
-                        to="/diamond"
-                        data-toggle="dropdown">
-                        Diamond
-                        <span className="caret" />
-                      </Link>
-                      <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
-                        <li className="dropdown-item">
-                          <Link className="dropdown-link" to="/diamond">
-                            Diamond
-                          </Link>
-                        </li>
-                        <li className="dropdown-item">
-                          <Link className="dropdown-link" to="/diamond">
-                            Diamond
-                          </Link>
-                        </li>
-                      </ul>
-                    </li> */}
-                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
-                      <Link className="nav-link p-0" to="/storelocator">
-                        {/* Store Locator */}
+                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5  px-xl-4">
+                      <Link className="nav-link wrap p-0" to="/storelocator">
                         {cmslists[4]?.title}
-                        <span className="caret" />
                       </Link>
                     </li>
-                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
-                      <Link className="nav-link p-0" to="/newsevent">
-                        News Event
-                        {/* {cmslists[7]?.title} */}
-                        <span className="caret" />
-                      </Link>
-                    </li>
-                    <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
-                      <Link className="nav-link p-0" to="/storelocator">
-                        {/* Store Locator */}
+                    <li className="nav-item dropdown py-2 py-xl-5 px-0 px-xl-4">
+                      <Link className="nav-link wrap p-0" to="/newsevent">
                         {cmslists[5]?.title}
-                        <span className="caret" />
                       </Link>
                     </li>
-
-                  
                     <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
-                      <Link className="nav-link p-0" to="/storelocator">
-                        {/* Store Locator */}
+                      <Link className="nav-link wrap p-0" to="/storelocator">
                         {cmslists[6]?.title}
                         <span className="caret" />
                       </Link>
-                    </li>
+                    </li>                  
                     <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
-                      <Link className="nav-link p-0" to="/storelocator">
-                        {/* Store Locator */}
+                      <Link className="nav-link wrap p-0" to="/storelocator">                      
                         {cmslists[7]?.title}
                         <span className="caret" />
                       </Link>
                     </li>
-                   
+
                   </ul>
                 </div>
                 <div className="col-xl-4 position-relative">

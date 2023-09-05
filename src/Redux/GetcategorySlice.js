@@ -18,11 +18,11 @@ export const getcategory = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://kmchoksi.onrender.com/api/categoryall`
+        `${baseurl}/categoryall`
       );
       return response.data;
     } catch (error) {
-      // logoutIfInvalidToken(error.response)
+
       return rejectWithValue(error.message);
     }
   }

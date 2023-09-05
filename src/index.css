@@ -19,3 +19,10 @@ code {
 .dropdown-link:hover .category-image {
   display: block;
 }
+
+/* navbar css  */
+
+
+.wrap{
+   white-space: nowrap;
+}

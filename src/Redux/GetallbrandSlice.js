@@ -2,9 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 
-// import { logoutIfInvalidToken } from "../../helpers/handleError";
-
-
 const baseurl = process.env.REACT_APP_API_BASE_URL
 
 const initialState = {
@@ -18,12 +15,11 @@ export const Allbrand = createAsyncThunk(
   "allbrand/allbrandList",
   async (page, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `${baseurl}/brandall`
-      );
+      const response = await axios.get(`${baseurl}/brandall`);
+      console.log(response);
       return response.data;
     } catch (error) {
-      // logoutIfInvalidToken(error.response)
+
       return rejectWithValue(error.message);
     }
   }

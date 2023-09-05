@@ -15,12 +15,10 @@ const Ourproducts = () => {
     setShowFilterContent(!showFilterContent);
   };
 
-  const cmslists = useSelector((state) => state.Getcmsall.data?.document || []);
-
   const getcategories = useSelector(
     (state) => state.Getcategory.data?.document || []
   );
-
+  console.log(getcategories);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getcategory());
@@ -56,7 +54,26 @@ const Ourproducts = () => {
       <section className="inner-banner">
         <div className="container">
           <Slider {...settings}>
-            <Animated
+            {getcategories.map((item, id) => {
+              console.log(item);
+              return (
+                <Animated
+                  animationOut="fadeInUp"
+                  animationIn="fadeInUp"
+                  isVisible={true}>
+                  <div className="inner-box-collection">
+                    <Link to="/ourproducts" className="d-block item">
+                      <img src={item.category_box_image.replace(
+                        "http://localhost:5000",
+                        "https://kmchoksi.onrender.com"
+                      )} alt="collection 01" />
+                      <h4>{item.name}</h4>
+                    </Link>
+                  </div>
+                </Animated>
+              )
+            })}
+            {/* <Animated
               animationOut="fadeInUp"
               animationIn="fadeInUp"
               isVisible={true}>
@@ -220,7 +237,7 @@ const Ourproducts = () => {
                   <h4>Pendant Sets</h4>
                 </Link>
               </div>
-            </Animated>
+            </Animated> */}
           </Slider>
         </div>
       </section>

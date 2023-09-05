@@ -22,7 +22,7 @@ export const boximage = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      // logoutIfInvalidToken(error.response)
+
       return rejectWithValue(error.message);
     }
   }
