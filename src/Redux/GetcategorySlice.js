@@ -18,7 +18,7 @@ export const getcategory = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `${baseurl}/getcategory`
+        `https://kmchoksi.onrender.com/api/categoryall`
       );
       return response.data;
     } catch (error) {

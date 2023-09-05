@@ -107,7 +107,19 @@ const Navbar = () => {
                         <div className="container container-xxl">
                           <div className="row no-gutters w-100">
                             <div className="col-2">
-                              {getcategories.slice(0, 4).map((item, index) => (
+                              {/* {Array.from({ length: Math.ceil(getcategories.length / 4) }).map((_, index) => (
+                                <div className="col-2" key={index}>
+                                  {getcategories.slice(index * 4, index * 4 + 4).map((item, subIndex) => (
+                                    <div className="dropdown-item" key={subIndex}>
+                                      <Link className="dropdown-link" to="/ourproducts">
+                                        {item.name}
+                                      </Link>
+                                    </div>
+                                  ))}
+                                </div>
+                              ))} */}
+
+                              {/* {getcategories.slice(0, 4).map((item, index) => (
                                 <div className="dropdown-item" key={index}>
                                   <Link
                                     className="dropdown-link"
@@ -115,7 +127,7 @@ const Navbar = () => {
                                     {item.name}
                                   </Link>
                                 </div>
-                              ))}
+                              ))} */}
                             </div>
                             <div className="col-2">
                               {getcategories.slice(4, 8).map((item, index) => (
@@ -148,7 +160,43 @@ const Navbar = () => {
                                 </div>
                               ))}
                             </div> */}
-                            <div className="col-6 h-100">
+                            {getcategories.slice(8, 12).map((item, id) => {
+                              console.log(item.banner_image);
+                              return (
+                                <div className="dropdown-item" key={id}>
+                                  <Link
+                                    className="dropdown-link"
+                                    to="/ourproducts"
+                                  >
+                                    {item.name}
+                                    <div className="category-image">
+                                      {item.banner_image.replace(
+                                        "http://localhost:5000",
+                                        "https://kmchoksi.onrender.com"
+                                      )}
+                                      {console.log(item.banner_image.replace(
+                                        "http://localhost:5000",
+                                        "https://kmchoksi.onrender.com"
+                                      ))}
+                                      <img
+                                        src={item.banner_image.replace(
+                                          "http://localhost:5000",
+                                          "https://kmchoksi.onrender.com"
+                                        )}
+                                        width={100}
+
+                                        // src={`https://kmchoksi.onrender.com/${item.banner_image}`}
+                                        // src={item.banner_image}
+                                        alt=""
+                                        className="category-img"
+                                      />
+                                    </div>
+                                  </Link>
+                                </div>
+                              )
+                            }
+                            )}
+                            {/* <div className="col-6 h-100">
                               <div className="card border-0 mt-2">
                                 <img
                                   src="images/menu.jpg"
@@ -156,7 +204,7 @@ const Navbar = () => {
                                   className="card-img"
                                 />
                               </div>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

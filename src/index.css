@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.category-image {
+  display: none;
+}
+
+/* This CSS code shows the category image when hovering over the link */
+.dropdown-link:hover .category-image {
+  display: block;
+}

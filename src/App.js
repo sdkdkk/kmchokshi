@@ -12,6 +12,7 @@ import Productdetails from "./Pages/Productdetails";
 import ScrollToTop from "./Components/Scroll";
 import Newsevent from "./Pages/Newsevent";
 import Newseventdetails from "./Pages/Newseventdetails";
+import "./index.css"
 
 function App() {
   return (
