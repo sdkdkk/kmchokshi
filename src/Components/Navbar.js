@@ -7,17 +7,13 @@ import { Allbrand } from "../Redux/GetallbrandSlice";
 import { brandlogo } from "../Redux/GetbrandlogoSlice";
 import { productApi } from "../Redux/productSlice";
 import { Component } from "react";
-
-
+import { weblogo } from "../Redux/weblogoimageSlice";
 
 const Navbar = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const cmslists = useSelector((state) => state.Getcmsall.data?.document || []);
-  const brand = useSelector(
-    (state) => state.Getallbrand.data?.document || []
-  );
+  const brand = useSelector((state) => state.Getallbrand.data?.document || []);
 
 
   const getcategories = useSelector(
@@ -34,21 +30,27 @@ const Navbar = () => {
   // useEffect(() => {
   //   dispatch(brandlogo());
   // }, [dispatch]);
+  const weblogos = useSelector(
+    (state) => state.weblogoimage.data?.document || []
+  );
 
-
+  console.log(weblogos);
+  useEffect(() => {
+    dispatch(brandlogo());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(cmslist());
     dispatch(getcategory());
     dispatch(Allbrand())
-
+    dispatch(weblogo());
   }, [dispatch]);
 
   const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState("");
 
   const handleSearchSubmit = (event) => {
-    event.preventDefault();  
+    event.preventDefault();
     setIsSearchPopupOpen(false);
   };
 
@@ -74,11 +76,17 @@ const Navbar = () => {
               <nav className="navbar navbar-expand-xl px-0 py-2 py-xl-0 row no-gutters">
                 <div className="col-xl-2">
                   <Link className="navbar-brand mr-0" to="/">
-                    <img
-                      src="images/logo.png"
-                      alt="K M Choksi"
-                      style={{ maxHeight: "60px", maxWidth: "100%" }}
-                    />
+                    {weblogos &&
+                      weblogos.map((data) => (
+                        <img
+                          src={data.logo_image.replace(
+                            "http://localhost:5000",
+                            "https://kmchoksi.onrender.com"
+                          )}
+                          alt=""
+                          style={{ maxHeight: "60px", maxWidth: "100%" }}
+                        />
+                      ))}
                   </Link>
                 </div>
                 <div className="col-xl-6 d-flex justify-content-center position-static">
@@ -99,14 +107,16 @@ const Navbar = () => {
                         <span className="caret" />
                       </Link>
                       <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
-                        {brand.map((item, i) => {                         
+                        {brand.map((item, i) => {
                           return (
-                            <li key={i} className="dropdown-item dropdown dropright">
+                            <li
+                              key={i}
+                              className="dropdown-item dropdown dropright">
                               <Link className="dropdown-link" to="/ourbrands">
                                 {item.name}
                               </Link>
                             </li>
-                          )
+                          );
                         })}
                         {/* <li className="dropdown-item dropdown dropright">
                           <Link className="dropdown-link" to="/ourbrands">
@@ -145,20 +155,19 @@ const Navbar = () => {
                             <div className="col-2">
                               {getcategories.slice(0, 4).map((item, i) => {
                                 return (
-                                <div
-                                  className="dropdown-item"
-                                  key={i}
-                                  onMouseEnter={() => setHoveredCategory(i)}
-                                  onMouseLeave={() => setHoveredCategory(null)}
+                                  <div
+                                    className="dropdown-item"
+                                    key={i}
+                                    onMouseEnter={() => setHoveredCategory(i)}
+                                    onMouseLeave={() => setHoveredCategory(null)}
                                     onClick={() => componentA(item, item._id)}
-                                >
+                                  >
                                     <span
                                       className="dropdown-link user-select-none"
-
                                     >
-                                    {item.name}
+                                      {item.name}
                                     </span>
-                                </div>
+                                  </div>
                                 )
                               })}
                             </div>
@@ -168,8 +177,7 @@ const Navbar = () => {
                                   className="dropdown-item"
                                   key={i}
                                   onMouseEnter={() => setHoveredCategory(i)}
-                                  onMouseLeave={() => setHoveredCategory(null)}
-                                >
+                                  onMouseLeave={() => setHoveredCategory(null)}>
                                   <Link
                                     className="dropdown-link"
                                     to="/ourproducts">
@@ -185,8 +193,7 @@ const Navbar = () => {
                                   className="dropdown-item"
                                   key={i}
                                   onMouseEnter={() => setHoveredCategory(i)}
-                                  onMouseLeave={() => setHoveredCategory(null)}
-                                >
+                                  onMouseLeave={() => setHoveredCategory(null)}>
                                   <Link
                                     className="dropdown-link"
                                     to="/ourproducts">
@@ -194,13 +201,15 @@ const Navbar = () => {
                                   </Link>
                                 </div>
                               ))}
-                            </div>                           
+                            </div>
 
                             <div className="col-6 h-100">
                               <div className="card border-0 mt-2">
                                 {hoveredCategory !== null && (
                                   <img
-                                    src={getcategories[hoveredCategory].banner_image.replace(
+                                    src={getcategories[
+                                      hoveredCategory
+                                    ].banner_image.replace(
                                       "http://localhost:5000",
                                       "https://kmchoksi.onrender.com"
                                     )}
@@ -229,14 +238,13 @@ const Navbar = () => {
                         {cmslists[6]?.title}
                         <span className="caret" />
                       </Link>
-                    </li>                  
+                    </li>
                     <li className="nav-item dropdown-item-blog dropdown py-2 py-xl-5 px-0 px-xl-4">
-                      <Link className="nav-link wrap p-0" to="/storelocator">                      
+                      <Link className="nav-link wrap p-0" to="/storelocator">
                         {cmslists[7]?.title}
                         <span className="caret" />
                       </Link>
                     </li>
-
                   </ul>
                 </div>
                 <div className="col-xl-4 position-relative">

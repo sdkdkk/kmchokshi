@@ -1,7 +1,21 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { weblogo } from "../Redux/weblogoimageSlice";
+import { useEffect } from "react";
 
 const Footer = () => {
+  const dispatch = useDispatch();
+  const weblogos = useSelector(
+    (state) => state.weblogoimage.data?.document || []
+  );
+
+  console.log(weblogos);
+
+  useEffect(() => {
+    dispatch(weblogo());
+  }, [dispatch]);
+
   return (
     <footer className="pt-13 pb-7 footer bg-color-6">
       <div className="container container-xxl">
@@ -43,7 +57,16 @@ const Footer = () => {
           </div>
           <div className="col-md-6 col-lg-4 mb-6 mb-lg-0 text-center f-border-left f-border-right">
             <div className="footer-logo">
-              <img src="images/logo-white.svg" alt="" />
+              {weblogos &&
+                weblogos.map((data) => (
+                  <img
+                    src={data.logo_image.replace(
+                      "http://localhost:5000",
+                      "https://kmchoksi.onrender.com"
+                    )}
+                    alt=""
+                  />
+                ))}
             </div>
             <h3 className="fs-16 mb-3 mt-5 text-uppercase letter-spacing-05">
               Follow Us

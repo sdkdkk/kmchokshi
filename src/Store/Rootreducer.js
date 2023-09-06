@@ -12,6 +12,8 @@ import GettestimonialReducer from "../Redux/GettestimonialSlice";
 import GetnewseventReducer from "../Redux/GetnewseventSlice";
 import productReducer from "../Redux/productSlice";
 
+import GethomevideoReducer from "../Redux/GethomevideoSlice";
+import weblogoimageReducer from "../Redux/weblogoimageSlice";
 
 const reducer = combineReducers({
   GethomeSlider: GethomeSliderReducer,
@@ -26,6 +28,8 @@ const reducer = combineReducers({
   Gettestimonial: GettestimonialReducer,
   Getnewsevent: GetnewseventReducer,
   product: productReducer
+  Gethomevideo: GethomevideoReducer,
+  weblogoimage: weblogoimageReducer,
 });
 
 export default reducer;
