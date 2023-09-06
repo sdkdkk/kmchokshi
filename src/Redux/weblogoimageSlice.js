@@ -2,9 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 
-// import { logoutIfInvalidToken } from "../../helpers/handleError";
-
-const baseurl = process.env.REACT_APP_API_BASE_URL
+const baseurl = process.env.REACT_APP_APIS_BASE_URL;
 
 const initialState = {
   data: [],
@@ -13,34 +11,32 @@ const initialState = {
   errorMessage: "",
 };
 
-export const collectionbanner = createAsyncThunk(
-  "collectionbanner/collectionbannerList",
+export const weblogo = createAsyncThunk(
+  "weblogo/weblogoList",
   async (page, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `${baseurl}/admin/collectionbannerall`
-      );
+      const response = await axios.get(`https://kmchoksi.onrender.com/api/admin/logo`);
       return response.data;
     } catch (error) {
-
+      // logoutIfInvalidToken(error.response)
       return rejectWithValue(error.message);
     }
   }
 );
 
-export const GetcollectionbannerSlice = createSlice({
-  name: "brandlogo",
+export const weblogoimageSlice = createSlice({
+  name: "weblogo",
   initialState,
   extraReducers: {
-    [collectionbanner.pending]: (state) => {
+    [weblogo.pending]: (state) => {
       state.isLoading = true;
     },
-    [collectionbanner.fulfilled]: (state, { payload }) => {
+    [weblogo.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = true;
       state.data = payload;
     },
-    [collectionbanner.rejected]: (state, { payload }) => {
+    [weblogo.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.isSuccess = false;
       state.errorMessage = payload;
@@ -48,4 +44,4 @@ export const GetcollectionbannerSlice = createSlice({
   },
 });
 
-export default GetcollectionbannerSlice.reducer;
+export default weblogoimageSlice.reducer;

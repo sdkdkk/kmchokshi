@@ -12,6 +12,7 @@ import { collectionbanner } from "../Redux/GetcollectionbannerSlice";
 import { boximage } from "../Redux/GetboximageSlice";
 import { Getabout } from "../Redux/GetaboutSlice";
 import { testimonialmaster } from "../Redux/GettestimonialSlice";
+import { homevideo } from "../Redux/GethomevideoSlice";
 
 const Home = () => {
   const homesliders = useSelector(
@@ -35,9 +36,14 @@ const Home = () => {
     (state) => state.Gettestimonial.data?.document || []
   );
 
-  console.log(Gettestimonials);
+  const homevideos = useSelector(
+    (state) => state.Gethomevideo.data?.document || []
+  );
+
+  console.log(homevideos);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(homeslider());
     dispatch(brandlogo());
@@ -45,6 +51,7 @@ const Home = () => {
     dispatch(boximage());
     dispatch(Getabout());
     dispatch(testimonialmaster());
+    dispatch(homevideo());
   }, [dispatch]);
 
   useEffect(() => {}, []);
@@ -80,7 +87,6 @@ const Home = () => {
           {homesliders &&
             homesliders.map(
               (data) =>
-                // Check if isActive is true before rendering the image
                 data.isActive && (
                   <div className="box" key={data.id}>
                     <div className="d-flex flex-column">
@@ -91,8 +97,6 @@ const Home = () => {
                         )}
                         alt=""
                       />
-                      {/* <img className="desktop" src="images/slider/01.jpg" alt="" /> */}
-                      {/* <img className="mobile" src="images/slider/mobile01.jpg" alt="" /> */}
                     </div>
                   </div>
                 )
@@ -104,26 +108,30 @@ const Home = () => {
           <h1 className="text-center mb-5 fs-30">KM CHOKSI COLLECTION</h1>
           <div className="d-flex flex-wrap client-logo-02 justify-content-center">
             {collectionbanners &&
-              collectionbanners.map((data) => (
-                <Animated
-                  animationOut="fadeInLeft"
-                  animationIn="fadeInLeft"
-                  isVisible={true}
-                  to="#"
-                  className="d-block item ">
-                  <img
-                    src={data.collection_image.replace(
-                      "http://localhost:5000",
-                      "https://kmchoksi.onrender.com"
-                    )}
-                    alt="collection 01"
-                  />
-                  <h4>{data.title}</h4>
-                </Animated>
-              ))}
+              collectionbanners.map((data) =>
+                data.isActive ? (
+                  <Animated
+                    animationOut="fadeInLeft"
+                    animationIn="fadeInLeft"
+                    isVisible={true}
+                    to="#"
+                    className="d-block item "
+                    key={data.id}>
+                    <img
+                      src={data.collection_image.replace(
+                        "http://localhost:5000",
+                        "https://kmchoksi.onrender.com"
+                      )}
+                      alt="collection 01"
+                    />
+                    <h4>{data.title}</h4>
+                  </Animated>
+                ) : null
+              )}
           </div>
         </div>
       </section>
+
       <section className="pb-10">
         <div className="container">
           <h1 className="text-center mb-7 fs-30">
@@ -205,57 +213,59 @@ const Home = () => {
         <div className="container container-xxl">
           <h4 className="text-lg-center sub-title">story of</h4>
           <h1 className="text-lg-center mb-7 fs-30">K M CHOKSI JEWELLERS</h1>
-
           {Getabouts &&
-            Getabouts.map((data) => (
-              <div className="row align-items-center ">
-                <Animated
-                  animationOut="fadeInLeft"
-                  animationIn="fadeInLeft"
-                  isVisible={true}
-                  className="col-md-6 mb-6 mb-md-0 pl-lg-17 pl-md-4">
-                  <div className="mxw-405px pl-md-2">
-                    <h2 className="fs-30 mb-5 lh-12">{data.title}</h2>
-                    <p className="mb-7 font-weight-500 text-justify">
-                      {data.description}
-                    </p>
-                    <Link
-                      to="/history"
-                      className="btn btn-outline-primary text-uppercase letter-spacing-05">
-                      About Us
-                    </Link>
-                  </div>
-                </Animated>
-                <Animated
-                  animationOut="fadeInRight"
-                  animationIn="fadeInRight"
-                  isVisible={true}
-                  className="col-md-6 parralax-images">
-                  <div className="row">
-                    <div className="col-6 col-lg-6 pb-5">
-                      <img
-                        src={data.logo_image.replace(
-                          "http://localhost:5000",
-                          "https://kmchoksi.onrender.com"
-                        )}
-                        alt="collection 01"
-                      />
+            Getabouts.map((data) =>
+              data.isActive ? (
+                <div className="row align-items-center" key={data.id}>
+                  <Animated
+                    animationOut="fadeInLeft"
+                    animationIn="fadeInLeft"
+                    isVisible={true}
+                    className="col-md-6 mb-6 mb-md-0 pl-lg-17 pl-md-4">
+                    <div className="mxw-405px pl-md-2">
+                      <h2 className="fs-30 mb-5 lh-12">{data.title}</h2>
+                      <p className="mb-7 font-weight-500 text-justify">
+                        {data.description}
+                      </p>
+                      <Link
+                        to="/history"
+                        className="btn btn-outline-primary text-uppercase letter-spacing-05">
+                        About Us
+                      </Link>
                     </div>
-                    <div className="col-6 col-lg-6 pb-5">
-                      <img
-                        src={data.image.replace(
-                          "http://localhost:5000",
-                          "https://kmchoksi.onrender.com"
-                        )}
-                        alt="collection 01"
-                      />
+                  </Animated>
+                  <Animated
+                    animationOut="fadeInRight"
+                    animationIn="fadeInRight"
+                    isVisible={true}
+                    className="col-md-6 parralax-images">
+                    <div className="row">
+                      <div className="col-6 col-lg-6 pb-5">
+                        <img
+                          src={data.logo_image.replace(
+                            "http://localhost:5000",
+                            "https://kmchoksi.onrender.com"
+                          )}
+                          alt="collection 01"
+                        />
+                      </div>
+                      <div className="col-6 col-lg-6 pb-5">
+                        <img
+                          src={data.image.replace(
+                            "http://localhost:5000",
+                            "https://kmchoksi.onrender.com"
+                          )}
+                          alt="collection 01"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </Animated>
-              </div>
-            ))}
+                  </Animated>
+                </div>
+              ) : null
+            )}
         </div>
       </section>
+
       <section className="pt-8 pb-10 border-bottom">
         <div className="container">
           <Slider {...settings1}>
@@ -359,26 +369,23 @@ const Home = () => {
         <div className="container container-xxl">
           <h1 className="fs-30 mb-8 text-center">WATCH OUR VIDEO</h1>
           <div className="row">
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <video autoPlay muted width="100%" controls loop>
-                <source src="video/v0.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <video autoPlay muted width="100%" controls loop>
-                <source src="video/v01.mp4" />
-              </video>
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <video autoPlay muted width="100%" controls loop>
-                <source src="video/v02.mp4" />
-              </video>
-            </div>
-            <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-              <video autoPlay muted width="100%" controls loop>
-                <source src="video/v03.mp4" />
-              </video>
-            </div>
+            {homevideos &&
+              homevideos.map((data, index) =>
+                data.isActive ? (
+                  <div
+                    className="col-6 col-sm-6 col-lg-3 mb-4 mb-lg-0"
+                    key={index}>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.videoCode.replace(
+                          'width="560" height="315"',
+                          'width="100%" height="500" autoplay muted'
+                        ),
+                      }}
+                    />
+                  </div>
+                ) : null
+              )}
           </div>
         </div>
       </section>
@@ -448,17 +455,21 @@ const Home = () => {
           <h1 className="fs-30 mb-8 text-center">k_m_ choksi_official</h1>
           <div className="row no-gutters">
             {boximages &&
-              boximages.map((data) => (
-                <div className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0">
-                  <img
-                    src={data.box_image.replace(
-                      "http://localhost:5000",
-                      "https://kmchoksi.onrender.com"
-                    )}
-                    alt=""
-                  />
-                </div>
-              ))}
+              boximages.map((data) =>
+                data.isActive ? (
+                  <div
+                    className="col-6 col-sm-6 col-lg-3 mb-6 mb-lg-0"
+                    key={data.id}>
+                    <img
+                      src={data.box_image.replace(
+                        "http://localhost:5000",
+                        "https://kmchoksi.onrender.com"
+                      )}
+                      alt=""
+                    />
+                  </div>
+                ) : null
+              )}
           </div>
         </div>
       </section>
