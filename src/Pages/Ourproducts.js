@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Animated } from "react-animated-css";
 import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
 import { getcategory } from "../Redux/GetcategorySlice";
+import { productApi } from "../Redux/productSlice";
 
 const Ourproducts = () => {
   const [showFilterContent, setShowFilterContent] = useState(false);
@@ -14,17 +15,26 @@ const Ourproducts = () => {
   const toggleFilterContent = () => {
     setShowFilterContent(!showFilterContent);
   };
-
+  const product = useSelector(
+    (state) => state.product.user?.document
+  );
+  console.log(product);
+  const location = useLocation()
+  const id = location.state?._id
+  console.log(location.state?._id);
+  console.log(id);
   const getcategories = useSelector(
     (state) => state.Getcategory.data?.document || []
   );
-  console.log(getcategories);
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getcategory());
+    dispatch(productApi(id))
   }, [dispatch]);
 
-  console.log(getcategories[0]?.name);
+
 
   const settings = {
     dots: true,
@@ -49,13 +59,13 @@ const Ourproducts = () => {
     ],
   };
 
+
   return (
     <main id="content">
       <section className="inner-banner">
         <div className="container">
           <Slider {...settings}>
             {getcategories.map((item, id) => {
-              console.log(item);
               return (
                 <Animated
                   animationOut="fadeInUp"
@@ -411,7 +421,64 @@ const Ourproducts = () => {
             </div>
           </div>
           <div className="row mb-4 overflow-hidden">
-            <Animated
+
+            {Array.isArray(product) && product?.map((item, i) => {
+              console.log(item.product_image);
+              console.log(item.product_image[0]);
+              const backgroundImageUrl = `https://kmchoksi.onrender.com/${item.product_image[0]}`;
+              console.log(backgroundImageUrl);
+              return (
+                <Animated
+                  className="col-6 col-sm-6 col-lg-3 mb-8"
+                  animationOut="fadeInUp"
+                  animationIn="fadeInUp"
+                  isVisible={true}>
+                  <div className="card border-0 hover-change-content product">
+                    <div className="card-img-top position-relative">
+                      <Link to="/productdetails">
+                        <div
+                          // style={{ backgroundImage: 'url("images/product-19.jpg")' }}
+                          // style={{
+                          //   backgroundImage: `url(${item.product_image.replace(
+                          //     "http://localhost:5000",
+                          //     "https://kmchoksi.onrender.com"
+                          //   )
+                          //     }`
+                          // }}
+                          style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+                          className="card-img ratio bg-img-cover-center ratio-1-1"></div></Link>
+                      <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
+                        <Link
+                          to="#"
+                          data-toggle="tooltip"
+                          title="Whatsapp"
+                          className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
+                          <i className="fab fa-whatsapp" />
+                        </Link>
+                        <Link
+                          to="#"
+                          data-toggle="tooltip"
+                          title="Enquire Now"
+                          className="d-flex align-items-center justify-content-center text-primary bg-white hover-white bg-hover-primary w-45px h-45px rounded-circle mr-2 border">
+                          <i className="fal fa-envelope-open-text" />
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="card-body px-0 pt-4 pb-0 d-flex align-items-end">
+                      <div className="mr-auto">
+                        <p className="letter-spacing-05 d-block font-weight-500 mb-1">
+                          {item.name}
+                        </p>
+                        <p className="font-weight-bold text-muted d-block mb-0">
+                          {item.gender} | Finger Ring | {item.gold_purity}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Animated>
+              )
+            })}
+            {/* <Animated
               className="col-6 col-sm-6 col-lg-3 mb-8"
               animationOut="fadeInUp"
               animationIn="fadeInUp"
@@ -1034,7 +1101,7 @@ const Ourproducts = () => {
                   </div>
                 </div>
               </div>
-            </Animated>
+            </Animated> */}
           </div>
           {/* <div className="canvas-sidebar filter-canvas">
             <div className="canvas-overlay"></div>

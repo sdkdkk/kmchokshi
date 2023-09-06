@@ -24932,7 +24932,7 @@ a.bg-hover-white:focus {
 }
 
 .product-image-dots {
-    position: fixed;
+    /* position: fixed; */
     transition: opacity .2s;
     opacity: 1;
 }

@@ -18,7 +18,7 @@ export const collectionbanner = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `${baseurl}/collectionbannerall`
+        `${baseurl}/admin/collectionbannerall`
       );
       return response.data;
     } catch (error) {

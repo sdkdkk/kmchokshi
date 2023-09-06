@@ -6,6 +6,9 @@ import "slick-carousel/slick/slick";
 import Slider from "react-slick";
 import { useForm } from "react-hook-form";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { productApi } from "../Redux/productSlice";
 
 const Productdetails = () => {
 
@@ -58,13 +61,19 @@ imageLinks.forEach(link => {
         },
       },
     ],
-  }; const [selectedImage, setSelectedImage] = useState('images/product-page-17.jpg'); // Set an initial image
-
+  };
+  const [selectedImage, setSelectedImage] = useState('images/product-page-17.jpg'); // Set an initial image
+  const dispatch = useDispatch()
   // Function to handle image selection when a small image is clicked
   const handleImageClick = (newImage) => {
     setSelectedImage(newImage);
   };
+  const product = useSelector((state) => state.product)
+  console.log(product);
 
+  useEffect(() => {
+    dispatch(productApi());
+  })
   return (
     <main id="content">
       <section className="pt-10 pb-lg-15 pb-11">

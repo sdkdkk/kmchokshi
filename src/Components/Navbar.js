@@ -1,34 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { cmslist } from "../Redux/GetcmsallSlice";
 import { getcategory } from "../Redux/GetcategorySlice";
 import { Allbrand } from "../Redux/GetallbrandSlice";
 import { brandlogo } from "../Redux/GetbrandlogoSlice";
+import { productApi } from "../Redux/productSlice";
+import { Component } from "react";
 
 
 
 const Navbar = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const cmslists = useSelector((state) => state.Getcmsall.data?.document || []);
   const brand = useSelector(
     (state) => state.Getallbrand.data?.document || []
   );
 
-  console.log(brand);
+
   const getcategories = useSelector(
     (state) => state.Getcategory.data?.document || []
   );
+
+
 
   const brandlogos = useSelector(
     (state) => state.getbrandlogo.data?.document || []
   );
 
-  console.log(brandlogos);
-  useEffect(() => {
-    dispatch(brandlogo());
-  }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(brandlogo());
+  // }, [dispatch]);
 
 
 
@@ -36,14 +41,14 @@ const Navbar = () => {
     dispatch(cmslist());
     dispatch(getcategory());
     dispatch(Allbrand())
+
   }, [dispatch]);
 
   const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState("");
 
   const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    console.log("Search keyword:", searchKeyword);
+    event.preventDefault();  
     setIsSearchPopupOpen(false);
   };
 
@@ -53,6 +58,13 @@ const Navbar = () => {
     setSearchPopupVisible((prevVisible) => !prevVisible);
   };
   const [hoveredCategory, setHoveredCategory] = useState(null);
+
+  const componentA = (item) => {
+    console.log(item, item._id);
+    const _id = item._id
+    navigate("/ourproducts", { state: { _id } });
+  }
+
   return (
     <>
       <header className="main-header navbar-light header-sticky header-sticky-smart">
@@ -87,8 +99,7 @@ const Navbar = () => {
                         <span className="caret" />
                       </Link>
                       <ul className="dropdown-menu pt-3 pb-0 pb-xl-3 x-animated x-fadeInUp">
-                        {brand.map((item, i) => {
-                          console.log(item);
+                        {brand.map((item, i) => {                         
                           return (
                             <li key={i} className="dropdown-item dropdown dropright">
                               <Link className="dropdown-link" to="/ourbrands">
@@ -132,20 +143,24 @@ const Navbar = () => {
                         <div className="container container-xxl">
                           <div className="row no-gutters w-100">
                             <div className="col-2">
-                              {getcategories.slice(0, 4).map((item, i) => (
+                              {getcategories.slice(0, 4).map((item, i) => {
+                                return (
                                 <div
                                   className="dropdown-item"
                                   key={i}
                                   onMouseEnter={() => setHoveredCategory(i)}
                                   onMouseLeave={() => setHoveredCategory(null)}
+                                    onClick={() => componentA(item, item._id)}
                                 >
-                                  <Link
-                                    className="dropdown-link"
-                                    to="/ourproducts">
+                                    <span
+                                      className="dropdown-link user-select-none"
+
+                                    >
                                     {item.name}
-                                  </Link>
+                                    </span>
                                 </div>
-                              ))}
+                                )
+                              })}
                             </div>
                             <div className="col-2">
                               {getcategories.slice(4, 8).map((item, i) => (

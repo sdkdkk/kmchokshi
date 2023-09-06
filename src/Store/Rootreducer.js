@@ -10,6 +10,8 @@ import GetcmsallReducer from "../Redux/GetcmsallSlice";
 import GetcategoryReducer from "../Redux/GetcategorySlice";
 import GettestimonialReducer from "../Redux/GettestimonialSlice";
 import GetnewseventReducer from "../Redux/GetnewseventSlice";
+import productReducer from "../Redux/productSlice";
+
 
 const reducer = combineReducers({
   GethomeSlider: GethomeSliderReducer,
@@ -22,7 +24,8 @@ const reducer = combineReducers({
   Getcmsall: GetcmsallReducer,
   Getcategory: GetcategoryReducer,
   Gettestimonial: GettestimonialReducer,
-  Getnewsevent:GetnewseventReducer
+  Getnewsevent: GetnewseventReducer,
+  product: productReducer
 });
 
 export default reducer;
