@@ -65,6 +65,7 @@ const Navbar = () => {
     console.log(item, item._id);
     const _id = item._id
     navigate("/ourproducts", { state: { _id } });
+    window.location.reload();
   }
 
   return (

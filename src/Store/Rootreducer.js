@@ -11,9 +11,9 @@ import GetcategoryReducer from "../Redux/GetcategorySlice";
 import GettestimonialReducer from "../Redux/GettestimonialSlice";
 import GetnewseventReducer from "../Redux/GetnewseventSlice";
 import productReducer from "../Redux/productSlice";
-
 import GethomevideoReducer from "../Redux/GethomevideoSlice";
 import weblogoimageReducer from "../Redux/weblogoimageSlice";
+import getProductReducer from "../Redux/getProductSlice";
 
 const reducer = combineReducers({
   GethomeSlider: GethomeSliderReducer,
@@ -27,9 +27,10 @@ const reducer = combineReducers({
   Getcategory: GetcategoryReducer,
   Gettestimonial: GettestimonialReducer,
   Getnewsevent: GetnewseventReducer,
-  product: productReducer
+  product: productReducer,
   Gethomevideo: GethomevideoReducer,
   weblogoimage: weblogoimageReducer,
+  getproduct: getProductReducer,
 });
 
 export default reducer;

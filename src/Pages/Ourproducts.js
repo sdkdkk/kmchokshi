@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Animated } from "react-animated-css";
 import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
@@ -19,6 +19,7 @@ const Ourproducts = () => {
     (state) => state.product.user?.document
   );
   console.log(product);
+  const navigate = useNavigate()
   const location = useLocation()
   const id = location.state?._id
   console.log(location.state?._id);
@@ -34,7 +35,10 @@ const Ourproducts = () => {
     dispatch(productApi(id))
   }, [dispatch]);
 
-
+  const productDetails = (item) => {
+    console.log(item);
+    navigate("/productdetails", { state: { item, _id: item._id } });
+  }
 
   const settings = {
     dots: true,
@@ -59,7 +63,6 @@ const Ourproducts = () => {
     ],
   };
 
-
   return (
     <main id="content">
       <section className="inner-banner">
@@ -83,171 +86,6 @@ const Ourproducts = () => {
                 </Animated>
               )
             })}
-            {/* <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img src="images/collection/01.jpg" alt="collection 01" />
-                  <h4>Gold Coins</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/02.jpg"
-                    alt="collection Logo 02"
-                  />
-                  <h4>Earrings</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/03.jpg"
-                    alt="collection Logo 03"
-                  />
-                  <h4>Pendants</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/04.jpg"
-                    alt="collection Logo 04"
-                  />
-                  <h4>Finger Rings</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/05.jpg"
-                    alt="collection Logo 05"
-                  />
-                  <h4>Mangalsutras</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/06.jpg"
-                    alt="collection Logo 06"
-                  />
-                  <h4>Neckwear</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/07.jpg"
-                    alt="collection Logo 07"
-                  />
-                  <h4>Wedding Rings</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/08.jpg"
-                    alt="collection Logo 08"
-                  />
-                  <h4>Chains</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/09.jpg"
-                    alt="collection Logo 09"
-                  />
-                  <h4>Bangles</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/10.jpg"
-                    alt="collection Logo 10"
-                  />
-                  <h4>Bracelets</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/11.jpg"
-                    alt="collection Logo 11"
-                  />
-                  <h4>Nose Pins</h4>
-                </Link>
-              </div>
-            </Animated>
-            <Animated
-              animationOut="fadeInUp"
-              animationIn="fadeInUp"
-              isVisible={true}>
-              <div className="inner-box-collection">
-                <Link to="/ourproducts" className="d-block item">
-                  <img
-                    src="images/collection/12.jpg"
-                    alt="collection Logo 12"
-                  />
-                  <h4>Pendant Sets</h4>
-                </Link>
-              </div>
-            </Animated> */}
           </Slider>
         </div>
       </section>
@@ -257,7 +95,7 @@ const Ourproducts = () => {
             <div className="col-lg-6">
               <h2 className="mb-5">Wedding Rings</h2>
             </div>
-            <div className="col-lg-6 text-right">
+            <div className="col-lg-6 mb-5 text-right">
               <button
                 type="button"
                 className="filter-btn"
@@ -420,22 +258,19 @@ const Ourproducts = () => {
               </form>
             </div>
           </div>
-          <div className="row mb-4 overflow-hidden">
 
-            {Array.isArray(product) && product?.map((item, i) => {
-              console.log(item.product_image);
-              console.log(item.product_image[0]);
-              const backgroundImageUrl = `https://kmchoksi.onrender.com/${item.product_image[0]}`;
-              console.log(backgroundImageUrl);
+          <div className="row mb-4 overflow-hidden">
+            {Array.isArray(product) && product?.map((item, i) => {              
+              const backgroundImageUrl = `https://kmchoksi.onrender.com/${item.product_image[0]}`;             
               return (
-                <Animated
+                <div
                   className="col-6 col-sm-6 col-lg-3 mb-8"
                   animationOut="fadeInUp"
                   animationIn="fadeInUp"
                   isVisible={true}>
                   <div className="card border-0 hover-change-content product">
                     <div className="card-img-top position-relative">
-                      <Link to="/productdetails">
+                      <span onClick={() => productDetails(item)}>
                         <div
                           // style={{ backgroundImage: 'url("images/product-19.jpg")' }}
                           // style={{
@@ -446,7 +281,7 @@ const Ourproducts = () => {
                           //     }`
                           // }}
                           style={{ backgroundImage: `url(${backgroundImageUrl})` }}
-                          className="card-img ratio bg-img-cover-center ratio-1-1"></div></Link>
+                          className="card-img ratio bg-img-cover-center ratio-1-1"></div></span>
                       <div className="position-absolute pos-fixed-bottom px-4 px-sm-6 pb-5 d-flex w-100 justify-content-center content-change-horizontal">
                         <Link
                           to="#"
@@ -475,9 +310,11 @@ const Ourproducts = () => {
                       </div>
                     </div>
                   </div>
-                </Animated>
+                </div>
+
               )
             })}
+          </div>
             {/* <Animated
               className="col-6 col-sm-6 col-lg-3 mb-8"
               animationOut="fadeInUp"
@@ -1102,7 +939,7 @@ const Ourproducts = () => {
                 </div>
               </div>
             </Animated> */}
-          </div>
+          {/* </div> */}
           {/* <div className="canvas-sidebar filter-canvas">
             <div className="canvas-overlay"></div>
             <form className="h-100">

@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 const baseurl = process.env.REACT_APP_API_BASE_URL;
 
-const productSlice = createSlice({
-    name: "product",
+const getproductSlice = createSlice({
+    name: "getproduct",
     initialState: {
         isAuthenticated: false,
         user: null,
@@ -13,10 +13,10 @@ const productSlice = createSlice({
         status: true,
     },
     reducers: {
-        productPending: (state) => {
+        getproductPending: (state) => {
             state.loading = true;
         },
-        productSuccess: (state, { payload }) => {
+        getproductSuccess: (state, { payload }) => {
             state.loading = false;
             state.isAuthenticated = true;
             state.user = payload;
@@ -24,7 +24,7 @@ const productSlice = createSlice({
             state.error = null;
 
         },
-        productFailure: (state, { payload }) => {
+        getproductFailure: (state, { payload }) => {
             state.loading = false;
             state.isAuthenticated = false;
             state.user = null;
@@ -34,22 +34,22 @@ const productSlice = createSlice({
     },
 });
 //Set-info
-export const { productPending, productSuccess, productFailure } =
-    productSlice.actions;
+export const { getproductPending, getproductFailure, getproductSuccess } =
+    getproductSlice.actions;
 
-export const productApi = (id) => async (dispatch) => {
+export const productIdApi = (id) => async (dispatch) => {
     console.log(id);
-    dispatch(productPending());
+    dispatch(getproductPending());
     try {
-        const response = await axios.get(`${baseurl}/getcategoryproduct/${id}`);
+        const response = await axios.get(`${baseurl}/product/${id}`);
         const data = response.data;
         console.log(data);
         console.log(response.data.document);
         if (data.status === 1) {
             toast.success(data.message);
-            dispatch(productSuccess(data));
+            dispatch(getproductSuccess(data));
         } else {
-            dispatch(productFailure(data));
+            dispatch(getproductFailure(data));
             toast.error(data.message);
         }
     } catch (error) {
@@ -58,4 +58,4 @@ export const productApi = (id) => async (dispatch) => {
     }
 };
 
-export default productSlice.reducer;
+export default getproductSlice.reducer;

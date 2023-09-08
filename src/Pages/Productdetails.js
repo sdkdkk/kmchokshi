@@ -9,12 +9,18 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { productApi } from "../Redux/productSlice";
+import { useLocation } from "react-router-dom";
+import { productIdApi } from "../Redux/getProductSlice";
+import { get } from "react-scroll/modules/mixins/scroller";
 
 const Productdetails = () => {
 
   // Get all image links
 const imageLinks = document.querySelectorAll('.list-group-item');
-
+  const location = useLocation()
+  console.log(location);
+  const id = location.state?.item._id
+  console.log(id);
 // Add a click event listener to each link
 imageLinks.forEach(link => {
   link.addEventListener('click', function (event) {
@@ -62,18 +68,27 @@ imageLinks.forEach(link => {
       },
     ],
   };
-  const [selectedImage, setSelectedImage] = useState('images/product-page-17.jpg'); // Set an initial image
+
   const dispatch = useDispatch()
   // Function to handle image selection when a small image is clicked
   const handleImageClick = (newImage) => {
     setSelectedImage(newImage);
   };
-  const product = useSelector((state) => state.product)
-  console.log(product);
+  const getproduct = useSelector((state) => state.getproduct.user?.document)
+  console.log(getproduct);
+  console.log(getproduct?.product_image);
+  console.log(getproduct?.defaultimage);
+  const defaultImage = getproduct?.defaultimage;
 
+  const defaultImageUrl = `https://kmchoksi.onrender.com/${getproduct?.product_image?.[defaultImage]}`;
+  const [selectedImage, setSelectedImage] = useState(defaultImageUrl);
+
+  console.log(defaultImageUrl);
   useEffect(() => {
-    dispatch(productApi());
-  })
+    dispatch(productIdApi(id));
+  }, [dispatch])
+
+
   return (
     <main id="content">
       <section className="pt-10 pb-lg-15 pb-11">
@@ -81,139 +96,68 @@ imageLinks.forEach(link => {
           <div className="row no-gutters">
             <div className="col-md-7 mb-8 mb-md-0 position-relative pr-md-6 pr-lg-10">
               <div className="d-flex">
-                <div className="d-flex">
-                  <div id="list-dots" className="list-group product-image-dots dots-thumbs mr-2">
+                <div id="list-dots" className="list-group product-image-dots dots-thumbs mr-2">
+                  {getproduct?.product_image?.map((image, index) => (
                     <Link
-                      className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0"
-                      to="#gallery-1"
-                      onClick={() => handleImageClick('images/product-page-17.jpg')} // Set the image URL for gallery-1
+                      key={index}
+                      className={`list-group-item list-group-item-action p-0 d-flex mb-2 w-80px 
+                                  rounded-0 ${index === defaultImageUrl ? 'active' : ''}`}
+                      to={`#gallery-${index + 1}`}
+                      onClick={() => handleImageClick(`https://kmchoksi.onrender.com/${image}`)}
                     >
-                      <img src="images/product-page-17-sm.jpg" alt="" />
+                      <img src={`https://kmchoksi.onrender.com/${image}`} alt="" />
                     </Link>
+                  ))}
+                </div>
+                <div className="scrollspy-images ml-md-12">
                     <Link
-                      className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
-                      to="#gallery-2"
-                      onClick={() => handleImageClick('images/product-page-18.jpg')} // Set the image URL for gallery-2
-                    >
-                      <img src="images/product-page-18-sm.jpg" alt="" />
-                    </Link>
-                    <Link
-                      className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
-                      to="#gallery-3"
-                      onClick={() => handleImageClick('images/product-page-17.jpg')} // Set the image URL for gallery-3
-                    >
-                      <img src="images/product-page-17-sm.jpg" alt="" />
-                    </Link>
-                  </div>
-
-                  <div className="scrollspy-images ml-md-12">
-                    {/* <img src={selectedImage} alt="" /> */}
-                    <Link
-                      to={"images/product-page-17.jpg"}
+                    to={defaultImage}
                       data-gtf-mfp="true"
                       // data-gallery-id={01}
                       className="d-block mb-2"
                       id="#gallery-1">
-                      <img src={selectedImage} alt="" />
-                    </Link>
-                  </div>
-
-                  {/* <div
-                  id="list-dots"
-                  className="list-group product-image-dots dots-thumbs mr-2">
-                  <Link
-                    className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0"
-                    to="#gallery-1"
-                    id="gallery-1"
-                    spy={true}
-                    smooth={true}
-                    duration={500}>
-                    <img src="images/product-page-17-sm.jpg" alt="" />
+                    <img src={`https://kmchoksi.onrender.com/uploads/product/product/1694153319700-663109458.jpg`} alt="" />
                   </Link>
-                  <Link
-                    className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
-                    to="#gallery-2"
-                    id="gallery-2"
-                    spy={true}
-                    smooth={true}
-                    duration={500}>
-                    <img src="images/product-page-18-sm.jpg" alt="" />
-                  </Link>
-                  <Link
-                    className="list-group-item list-group-item-action p-0 d-flex mb-2 w-80px rounded-0 "
-                    to="#gallery-3"
-                    id="gallery-3"
-                    spy={true}
-                    smooth={true}
-                    duration={500}>
-                    <img src="images/product-page-17-sm.jpg" alt="" />
-                  </Link>
-                </div> */}
-                  {/* <div className="scrollspy-images ml-md-12">
-                  <Link
-                    to="images/product-page-17.jpg"
-                    data-gtf-mfp="true"
-                    // data-gallery-id={01}
-                    className="d-block mb-2"
-                    id="#gallery-1">
-                    <img src="images/product-page-17.jpg" alt="" />
-                  </Link>
-                  <Link
-                    to="images/product-page-18.jpg"
-                    data-gtf-mfp="true"
-                    // data-gallery-id={02}
-                    className="d-block mb-2"
-                    id="#gallery-2">
-                    <img src="images/product-page-18.jpg" alt="" />
-                  </Link>
-                  <Link
-                    to="images/product-page-17.jpg"
-                    data-gtf-mfp="true"
-                      data-gallery-id="3"
-                    className="d-block mb-2"
-                    id="#gallery-3">
-                    <img src="images/product-page-17.jpg" alt="" />
-                  </Link>
-                </div> */}
                 </div>
               </div>
             </div>
+
             <div
               className="col-md-5 primary-summary summary-sticky"
               id="summary-sticky">
               <div className="primary-summary-inner">
-                <h2 className="fs-28 mb-4">Bold Glint Diamond Ring</h2>
+                <h2 className="fs-28 mb-4">{getproduct?.name}</h2>
                 <p className="mt-2 mb-6">
-                  Celebrate the quirks and nuances of your bond with these
-                  couple rings, crafted in 22 karat yellow gold! Comes in a set
-                  of 2.
+                  {getproduct?.short_description}
                 </p>
                 <ul className="list-unstyled border-top pt-5 mt-5">
                   <li className="row mb-2">
                     <span className="d-block col-3 text-primary font-weight-500 fs-15">
-                      Finger Ring:
+                      Name :
                     </span>
-                    <span className="d-block col-9 fs-15">Unisex</span>
+                    <span className="d-block col-9 fs-15">{getproduct?.name}</span>
                   </li>
                   <li className="row mb-2">
                     <span className="d-block col-3 text-primary font-weight-500 fs-15">
                       Gold Purity:
                     </span>
-                    <span className="d-block col-9 fs-15">22 Karat</span>
+                    <span className="d-block col-9 fs-15">{getproduct?.gold_purity
+                    }</span>
                   </li>
                   <li className="row mb-2">
                     <span className="d-block col-3 text-primary font-weight-500 fs-15">
                       Gross Weight:
                     </span>
-                    <span className="d-block col-9 fs-15">10 Gm</span>
+                    <span className="d-block col-9 fs-15">{getproduct?.gross_weight}</span>
                   </li>
                   <li className="row mb-2">
                     <span className="d-block col-3 text-primary font-weight-500 fs-15">
                       Color:
                     </span>
-                    <span className="d-block col-9 fs-15">Yellow gold</span>
+                    <span className="d-block col-9 fs-15">{getproduct?.color}</span>
                   </li>
                 </ul>
+
                 <div className="d-flex align-items-center flex-wrap mt-5">
                   <Link
                     to="#"
